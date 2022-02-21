@@ -3,13 +3,13 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot'); /* IE9 Compat Modes */
+  src: url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 /* open-sans-600 - latin-ext_latin_cyrillic-ext_cyrillic */
@@ -17,13 +17,13 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.eot'); /* IE9 Compat Modes */
+  src: url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.svg#OpenSans') format('svg'); /* Legacy iOS */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-600.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 /* open-sans-700 - latin-ext_latin_cyrillic-ext_cyrillic */
@@ -31,13 +31,13 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.eot'); /* IE9 Compat Modes */
+  src: url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.svg#OpenSans') format('svg'); /* Legacy iOS */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/open-sans-v27-latin-ext_latin_cyrillic-ext_cyrillic-700.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 ::-webkit-scrollbar {
@@ -70,13 +70,16 @@
   --dark-grey: #606060;
   --light-grey: #C5C5C5; /* table borders */
   --white: #fff;
+  --font-size-normal: font-size: clamp(0.875rem, 0.8170731707317073rem + 0.24390243902439024vw, 1rem);
+  --font-size-small: font-size: clamp(0.75rem, 0.6920731707317073rem + 0.24390243902439024vw, 0.875rem);
+  --font-size-large: font-size: clamp(1.5rem, 1.326219512195122rem + 0.7317073170731707vw, 1.875rem);
 }
 
 ::placeholder {
   color: var(--light-grey);
   opacity: 1;
   font-family: "Open Sans";
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
 }
 
 :focus,
@@ -85,9 +88,35 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+}
+
+body, input, textarea, ::placeholder {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: var(--font-size-normal);
+}
+
+body {
+  overflow: hidden;
+}
+
+ul li,
+li a,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+/*HELPER CLASSES  ****************************************/
+
 .grid-2-1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 200px 1fr;
 }
 
 .fixed-center {
@@ -137,38 +166,16 @@
   text-decoration-thickness: 2px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body, input, textarea, ::placeholder {
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 1rem;
-  font-size: clamp(0.8125rem, 0.5642421602787456rem + 1.0452961672473868vw, 1rem);
-}
-
-body {
-  overflow: hidden;
-}
-
-ul li,
-li a,
-a {
-  text-decoration: none;
-  list-style: none;
-}
-
-/* SIDEBAR I CONTAINER */
+/* SIDEBAR ****************************************/
 
 .sidebar {
   height: 100vh;
   background: var(--blue-grad);
   border-radius: 0 0 20px 0;
   box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  display: block;
+  display: fixed;
+  top: 0;
+  left: 0;
 }
 
 .sidebar img {
@@ -184,7 +191,7 @@ a {
 .sidebar-menu li a{
   color: var(--white);
   font-weight: 700;
-  line-height: 19px;
+  line-height: 1.2rem;
   text-align: left;
 
 }
@@ -215,7 +222,7 @@ a {
 
 }
 
-/* MAIN */
+/* MAIN ****************************************/
 
 .dashboard-container {
   width: calc(100vw - 200px);
@@ -250,7 +257,7 @@ a {
 
 .top-section::before {
   content: "";
-  background: url(../icons/search-icon.svg) no-repeat center;
+  background: url(../public/icons/search-icon.svg) no-repeat center;
   background-size: cover;
   width: 18px;
   height: 18px;
@@ -316,27 +323,27 @@ a {
 }
 
 .edit-option {
-  background-image: url(../icons/edit-icon.png);
+  background-image: url(../public/icons/edit-icon.png);
 }
 
 .view-option {
-  background-image: url(../icons/view-icon.png);
+  background-image: url(../public/icons/view-icon.png);
 }
 
 .delete-option {
-  background-image: url(../icons/delete-icon.png);
+  background-image: url(../public/icons/delete-icon.png);
 }
 
 .time-option {
-  background-image: url(../icons/time-icon.png);
+  background-image: url(../public/icons/time-icon.png);
 }
 
 .view-dark-option {
-  background-image: url(../icons/view-dark-icon.png);
+  background-image: url(../public/icons/view-dark-icon.png);
 }
 
 .invoice-option {
-  background-image: url(../icons/invoice-icon.png);
+  background-image: url(../public/icons/invoice-icon.png);
 }
 
 /* BLACK ALPHA */
@@ -376,8 +383,7 @@ a {
 }
 
 .deleted-user {
-  font-size: 1.5rem;
-  font-size: clamp(1.5rem, 1.1895424836601307rem + 1.3071895424836601vw, 2rem);
+  font-size: var(--font-size-large);
   font-weight: 700;
   margin-block: 10px 20px;
 }
@@ -416,8 +422,7 @@ a {
 
 .modal-title {
   font-weight: 700;
-  font-size: 1.5rem;
-  font-size: clamp(1.5rem, 1.267156862745098rem + 0.9803921568627451vw, 1.875rem);
+  font-size: var(--font-size-large);
 }
 
 .add-user-image {
@@ -430,7 +435,7 @@ a {
   display: grid;
   place-items: center;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
 }
 
 .edit-user-image {
@@ -441,11 +446,11 @@ a {
   padding: 5px 20px;
   border: 1px solid var(--light-grey);
   border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
 }
 
 .modal-right-input::placeholder {
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
 }
 
 .add-user-modal-btns,
@@ -483,8 +488,7 @@ a {
 
 .modal-subtitle {
   font-weight: 700;
-  font-size: 1rem;
-  font-size: clamp(0.8125rem, 0.5642421602787456rem + 1.0452961672473868vw, 1rem);
+  font-size: var(--font-size-normal);
   margin-bottom: 20px;
 }
 
@@ -573,7 +577,7 @@ a {
   border: 1px solid var(--light-grey);
   border-radius: 4px;
   padding: 5px 5px 5px 10px;
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
 }
 
 .time-modal-btns {
@@ -611,8 +615,7 @@ a {
 }
 
 .profile-title {
-  font-size: 1.5rem;
-  font-size: clamp(1.5rem, 1.267156862745098rem + 0.9803921568627451vw, 1.875rem);
+  font-size: var(--font-size-large);
   font-weight: 700;
   margin-bottom: 25px;
 }
@@ -637,8 +640,7 @@ a {
 
 .profile-table th {
   background: var(--blue-grad);
-  font-size: 1rem;
-  font-size: clamp(0.8125rem, 0.5642421602787456rem + 1.0452961672473868vw, 1rem);
+  font-size: var(--font-size-normal);
   color: var(--white);
   padding: 16px 20px;
   position: sticky;
@@ -655,7 +657,7 @@ a {
 .profile-table-cell {
   padding: 20px;
   border: 1px solid var(--white);
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
   color: var(--dark-grey);
 }
 
