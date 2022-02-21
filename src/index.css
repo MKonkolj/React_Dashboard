@@ -70,7 +70,7 @@
   --dark-grey: #606060;
   --light-grey: #C5C5C5; /* table borders */
   --white: #fff;
-  --font-size-normal: font-size: clamp(0.875rem, 0.8170731707317073rem + 0.24390243902439024vw, 1rem);
+  --font-size-normal: font-size: clamp(0.75rem, 0.575242718446602rem + 0.48543689320388345vw, 1rem);
   --font-size-small: font-size: clamp(0.75rem, 0.6920731707317073rem + 0.24390243902439024vw, 0.875rem);
   --font-size-large: font-size: clamp(1.5rem, 1.326219512195122rem + 0.7317073170731707vw, 1.875rem);
 }
@@ -227,6 +227,7 @@ a {
 .dashboard-container {
   width: calc(100vw - 200px);
   padding: 30px;
+  overflow: hidden;
 }
 
 .dashboard {
@@ -236,7 +237,7 @@ a {
   height: calc(100vh - 60px);
 }
 
-/* SEARCH BAR */
+/* SEARCH BAR ***********************************/
 
 .top-section {
   height: 100px;
@@ -255,6 +256,11 @@ a {
   color: var(--light-blue);
 }
 
+.searchbar:focus-visible,
+.searchbar:focus {
+  box-shadow: none;
+}
+
 .top-section::before {
   content: "";
   background: url(../public/icons/search-icon.svg) no-repeat center;
@@ -271,7 +277,7 @@ a {
   margin: 30px 60px 30px 10px;
 }
 
-/* TABLE */
+/* USERS, DEVELOPERS, CLIENTS TABLE ****************************************/
 
 .table-div {
   width: 100%;
@@ -288,7 +294,7 @@ a {
 }
 
 .table-cell {
-  padding: clamp(0.9375rem, 0.35539215686274506rem + 2.450980392156863vw, 1.875rem);
+  padding: clamp(0.9375rem, 0.28216019417475735rem + 1.820388349514563vw, 1.875rem);
   border: 1px solid var(--light-grey);
   white-space: normal;
 }
@@ -312,8 +318,8 @@ a {
 
 .options-icon {
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--font-size-large);
+  height: var(--font-size-large);
   background-size: contain;
   cursor: pointer;
 }
@@ -322,31 +328,14 @@ a {
   filter: invert(37%) sepia(100%) saturate(2345%) hue-rotate(208deg) brightness(95%) contrast(96%);
 }
 
-.edit-option {
-  background-image: url(../public/icons/edit-icon.png);
-}
+.edit-option {background-image: url(../public/icons/edit-icon.png);}
+.view-option {background-image: url(../public/icons/view-icon.png);}
+.delete-option {background-image: url(../public/icons/delete-icon.png);}
+.time-option {background-image: url(../public/icons/time-icon.png);}
+.view-dark-option {background-image: url(../public/icons/view-dark-icon.png);}
+.invoice-option {background-image: url(../public/icons/invoice-icon.png);}
 
-.view-option {
-  background-image: url(../public/icons/view-icon.png);
-}
-
-.delete-option {
-  background-image: url(../public/icons/delete-icon.png);
-}
-
-.time-option {
-  background-image: url(../public/icons/time-icon.png);
-}
-
-.view-dark-option {
-  background-image: url(../public/icons/view-dark-icon.png);
-}
-
-.invoice-option {
-  background-image: url(../public/icons/invoice-icon.png);
-}
-
-/* BLACK ALPHA */
+/* BLACK ALPHA *********************************************/
 
 .black-alpha {
   width: 100%;
