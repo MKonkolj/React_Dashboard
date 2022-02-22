@@ -292,6 +292,7 @@ a {
   width: 100%;
   border-collapse: collapse;
   border-style: hidden;
+  border-bottom: 1px solid var(--dark-grey);
 }
 
 .table-cell {

@@ -8,16 +8,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <div className="App grid-2-1">
-      {/* <BrowserRouter>
-      <Sidebar />
-        <Routes>
-          <Route path="/" element={<Browse />} />
-          <Route path="/myreviews" element={<MyReviews />} />
-          <Route path="/mygames" element={<MyGames />} />
-          <Route path="/newreview" element={<NewReview />} />
-          <Route path="/game/:id" element={<GamePage />} />
-        </Routes>
-      </BrowserRouter> */}
       <BrowserRouter>
       <Sidebar />
       <div className="dashboard-container">
