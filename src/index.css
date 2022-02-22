@@ -227,7 +227,6 @@ a {
 .dashboard-container {
   width: calc(100vw - 200px);
   padding: 30px;
-  overflow: hidden;
 }
 
 .dashboard {
@@ -235,6 +234,7 @@ a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: left;
   height: calc(100vh - 60px);
+  overflow: hidden;
 }
 
 /* SEARCH BAR ***********************************/
@@ -284,6 +284,7 @@ a {
   height: calc(100% - 100px);
   overflow: scroll;
   border-radius: 20px;
+  height: calc(100vh - 160px);
 }
 
 .table {
@@ -307,7 +308,10 @@ a {
 .avatar-column img {
   display: block;
   margin: 0 auto;
+  border-radius: 50%;
   width: clamp(3.125rem, 1.9607843137254901rem + 4.901960784313726vw, 5rem);
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 .options-container {
@@ -731,6 +735,9 @@ a {
   }
   .top-section::before {
       left: clamp(1.25rem, -1.09375rem + 7.8125vw, 3.75rem);
+  }
+  .table-div {
+    height: calc(100vh - 230px);
   }
   .time-modal {
       width: min(500px, 90%);
