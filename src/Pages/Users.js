@@ -14,17 +14,19 @@ function Users() {
     }, [users])
 
   function handleOnChange (e) {
-    let searchQuery = e.target.value.toUpperCase();
+    let searchQuery = e.target.value.toLowerCase();
     setSearchedUsers(users.filter(user => 
-      user.first_name.toUpperCase().includes(searchQuery)
-      || user.last_name.toUpperCase().includes(searchQuery)
-      || user.email.toUpperCase().includes(searchQuery)
+      user.first_name.toLowerCase().includes(searchQuery)
+      || user.last_name.toLowerCase().includes(searchQuery)
+      || user.email.toLowerCase().includes(searchQuery)
     ))
   }
 
   return (
     <div>
+      {/* SEARCHBAR */}
       <Searchbar handleOnChange={handleOnChange}/>
+      {/* TABLE */}
       <div className="table-div">
         <table className="table">
           <thead>
@@ -62,6 +64,7 @@ function Users() {
           </tbody>
         </table>
       </div>
+      {/* TABLE END */}
     </div>
   )
 }
