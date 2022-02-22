@@ -300,6 +300,11 @@ a {
   white-space: normal;
 }
 
+th.table-cell {
+  padding-block: 1rem;
+  white-space: nowrap;
+}
+
 .avatar-column {
   padding: 10px 30px 10px 30px;
   text-align: center;
@@ -322,8 +327,8 @@ a {
 
 .options-icon {
   display: block;
-  width: var(--font-size-large);
-  height: var(--font-size-large);
+  width: 1.5rem;
+  height: 1.5rem;
   background-size: contain;
   cursor: pointer;
 }
