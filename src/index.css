@@ -112,6 +112,11 @@ a {
   list-style: none;
 }
 
+ul li a:focus,
+ul li a:focus-visible {
+  box-shadow: none;
+}
+
 /*HELPER CLASSES  ****************************************/
 
 .grid-2-1 {

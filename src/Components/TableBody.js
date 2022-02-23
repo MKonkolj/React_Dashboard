@@ -2,14 +2,17 @@ const TableBody = ({ data, columns, options }) => {
     // ======== Expected paramaters ================
     // data={searchedUsers}  - for mapping
     // columns={{            - for selecting columns
-    //     avatar: true,
-    //     first_name: true,
-    //     last_name: true,
-    //     city: true,
-    //     country: false,
-    //     role: true,
-    //     status: true,
-    //     email: true
+          // user_avatar: true,
+          // user_first_name: true,
+          // user_last_name: true,
+          // user_city: false,
+          // user_country: false,
+          // user_role: false,
+          // user_status: false,
+          // user_email: false,
+          // client_avatar: false,
+          // client_name: true,
+          // client_email: false
     // }}
     // options={{            - for selecting options
     //     time: false,
@@ -25,31 +28,35 @@ const TableBody = ({ data, columns, options }) => {
           {/* TABLE HEADER */}
           <thead>
             <tr>
-            {columns.avatar && <th className="table-cell avatar-column">Avatar</th>}
-            {columns.first_name && <th className="table-cell name-column">First name</th>}
-            {columns.last_name && <th className="table-cell surname-column">Last name</th>}
-            {columns.city && <th className="table-cell city-column">City</th>}
-            {columns.country && <th className="table-cell country-column">Country</th>}
-            {columns.role && <th className="table-cell role-column">Role</th>}
-            {columns.status && <th className="table-cell status-column">Status</th>}
-            {columns.email && <th className="table-cell email-column">Email</th>}
+            {columns.user_avatar && <th className="table-cell avatar-column">Avatar</th>}
+            {columns.user_first_name && <th className="table-cell name-column">First name</th>}
+            {columns.user_last_name && <th className="table-cell surname-column">Last name</th>}
+            {columns.user_city && <th className="table-cell city-column">City</th>}
+            {columns.user_country && <th className="table-cell country-column">Country</th>}
+            {columns.user_role && <th className="table-cell role-column">Role</th>}
+            {columns.user_status && <th className="table-cell status-column">Status</th>}
+            {columns.user_email && <th className="table-cell email-column">Email</th>}
+            {columns.client_avatar && <th class="table-cell avatar-column">Avatar</th>}
+            {columns.client_name && <th class="table-cell name-column">Client name</th>}
             {options && <th className="table-cell options-column">Options</th>}
             </tr>
           </thead>
           {/* TABLER HEADER END */}
           {/* TABLE BODY */}
           <tbody>
-            {data && data.map((user, index) => {
+            {data && data.map((data, index) => {
               return(
               <tr key={index}>
-              {columns.avatar && <td className="table-cell avatar-column"><img src={user.avatar.image_path} alt={user.avatar.image_alt}/></td>}
-              {columns.first_name && <td className="table-cell name-column">{user.first_name}</td>}
-              {columns.last_name && <td className="table-cell surname-column">{user.last_name}</td>}
-              {columns.city && <td className="table-cell city-column">{user.city}</td>}
-              {columns.country && <td className="table-cell country-column">{user.country}</td>}
-              {columns.role && <td className="table-cell role-column">{user.role}</td>}
-              {columns.status && <td className="table-cell status-column">{user.status}</td>}
-              {columns.email && <td className="table-cell email-column">{user.email}</td>}
+              {columns.user_avatar && <td className="table-cell avatar-column"><img src={data.avatar.image_path} alt={data.avatar.image_alt}/></td>}
+              {columns.user_first_name && <td className="table-cell name-column">{data.first_name}</td>}
+              {columns.user_last_name && <td className="table-cell surname-column">{data.last_name}</td>}
+              {columns.user_city && <td className="table-cell city-column">{data.city}</td>}
+              {columns.user_country && <td className="table-cell country-column">{data.country}</td>}
+              {columns.user_role && <td className="table-cell role-column">{data.role}</td>}
+              {columns.user_status && <td className="table-cell status-column">{data.status}</td>}
+              {columns.user_email && <td className="table-cell email-column">{data.email}</td>}
+              {columns.client_avatar && <td class="table-cell avatar-column"><img src={data.avatar} alt="user avatar"/></td>}
+              {columns.client_name && <td class="table-cell name-column">{data.client_name}</td>}
               {options && (
                 <td className="table-cell options-column">
                     <div className="options-container">
