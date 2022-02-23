@@ -35,7 +35,7 @@ function Users() {
         columns={{
           avatar: true,
           first_name: true,
-          lastName: true,
+          last_name: true,
           city: true,
           country: false,
           role: true,
