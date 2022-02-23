@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 function Users() {
 
-
   const { data: users, isLoading, error } = useFetch("http://localhost:8000/users")
 
   const [searchedUsers, setSearchedUsers] = useState();
