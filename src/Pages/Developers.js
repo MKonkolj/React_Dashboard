@@ -20,7 +20,7 @@ function Developers() {
           user_status: false,
           user_email: false,
           client_avatar: false,
-          client_name: true,
+          client_name: false,
           client_email: false,
         }}
         options={{
