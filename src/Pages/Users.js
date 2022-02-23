@@ -1,5 +1,5 @@
 import Searchbar from "../Components/Searchbar"
-import Table from "../Components/Table";
+import TableBody from "../Components/TableBody";
 import useFetch from "../Hooks/useFetch";
 import { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ function Users() {
       {/* SEARCHBAR */}
       <Searchbar handleOnChange={handleOnChange}/>
       {/* TABLE */}
-      <Table
+      <TableBody
         data={searchedUsers}
         columns={{
           avatar: true,
