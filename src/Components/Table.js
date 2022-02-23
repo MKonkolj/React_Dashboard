@@ -4,7 +4,7 @@ const Table = ({ data, columns, options }) => {
     // columns={{            - for selecting columns
     //     avatar: true,
     //     first_name: true,
-    //     lastName: true,
+    //     last_name: true,
     //     city: true,
     //     country: false,
     //     role: true,
@@ -26,8 +26,8 @@ const Table = ({ data, columns, options }) => {
           <thead>
             <tr>
             {columns.avatar && <th className="table-cell avatar-column">Avatar</th>}
-            {columns.firstName && <th className="table-cell name-column">First name</th>}
-            {columns.lastName && <th className="table-cell surname-column">Last name</th>}
+            {columns.first_name && <th className="table-cell name-column">First name</th>}
+            {columns.last_name && <th className="table-cell surname-column">Last name</th>}
             {columns.city && <th className="table-cell city-column">City</th>}
             {columns.country && <th className="table-cell country-column">Country</th>}
             {columns.role && <th className="table-cell role-column">Role</th>}
@@ -43,8 +43,8 @@ const Table = ({ data, columns, options }) => {
               return(
               <tr key={index}>
               {columns.avatar && <td className="table-cell avatar-column"><img src={user.avatar.image_path} alt={user.avatar.image_alt}/></td>}
-              {columns.firstName && <td className="table-cell name-column">{user.first_name}</td>}
-              {columns.lastName && <td className="table-cell surname-column">{user.last_name}</td>}
+              {columns.first_name && <td className="table-cell name-column">{user.first_name}</td>}
+              {columns.last_name && <td className="table-cell surname-column">{user.last_name}</td>}
               {columns.city && <td className="table-cell city-column">{user.city}</td>}
               {columns.country && <td className="table-cell country-column">{user.country}</td>}
               {columns.role && <td className="table-cell role-column">{user.role}</td>}
