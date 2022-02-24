@@ -2,7 +2,7 @@ import Searchbar from "../Components/Searchbar"
 import TableBody from "../Components/TableBody";
 import { useEffect, useState } from "react";
 
-function Table({ data, columns, options }) {
+function Table({ url, data, columns, options }) {
 
   // Set all users initially to be displayed =====================
   const [searchedData, setSearchedData] = useState();
@@ -36,6 +36,7 @@ function Table({ data, columns, options }) {
         <Searchbar handleOnChange={handleOnChange}/>
         {/* TABLE */}
         <TableBody
+            url={url}
             data={searchedData}
             columns={columns}
             options={options}

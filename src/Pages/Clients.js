@@ -1,19 +1,14 @@
-import Loading from "../Components/Loading";
+
 import Table from "../Components/Table";
-import useFetch from "../Hooks/useFetch";
 
 function Clients() {
 
-  // Get all users from db ===============================
-  const { data, isLoading, error } = useFetch("http://localhost:8000/clients")
+  const url = "http://localhost:8000/clients";
 
   return (
     <div>
-      {isLoading && <Loading />}
-      {error && <p>{error}</p>}
-      {data && (
       <Table 
-        data={data}
+        url={url}
         columns={{
           user_avatar: false,
           user_first_name: false,
@@ -34,7 +29,7 @@ function Clients() {
           invoice: true,
           delete: true
         }}
-      />)}
+      />
     </div>
   )
 }
