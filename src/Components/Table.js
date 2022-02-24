@@ -2,24 +2,35 @@ import Searchbar from "../Components/Searchbar"
 import TableBody from "../Components/TableBody";
 import { useEffect, useState } from "react";
 
-function Table({ data: users, columns, options }) {
+function Table({ data, columns, options }) {
 
   // Set all users initially to be displayed
-  const [searchedUsers, setSearchedUsers] = useState();
+  const [searchedData, setSearchedData] = useState();
 
   useEffect(() => {
-      setSearchedUsers(users);
-      }, [users])
+      setSearchedData(data);
+      }, [data])
 
-  // Filter users by searchbox value
+
+  // Filter Data by searchbox value
   function handleOnChange (e) {
       let searchQuery = e.target.value.toLowerCase();
-      setSearchedUsers(users.filter(user => 
-      user.first_name.toLowerCase().includes(searchQuery)
-      || user.last_name.toLowerCase().includes(searchQuery)
-      || user.email.toLowerCase().includes(searchQuery)
-      ))
+      if (columns.client_name) {
+        // search by client attributes
+        setSearchedData(data.filter(client => 
+          client.client_name.toLowerCase().includes(searchQuery)
+          // || client.email.toLowerCase().includes(searchQuery)
+        ))
+      } else {
+        setSearchedData(data.filter(user => 
+          // search by user attributes
+          user.first_name.toLowerCase().includes(searchQuery)
+          || user.last_name.toLowerCase().includes(searchQuery)
+          || user.email.toLowerCase().includes(searchQuery)
+          ))
+      }
   }
+  
 
   return (
     <div>
@@ -27,7 +38,7 @@ function Table({ data: users, columns, options }) {
         <Searchbar handleOnChange={handleOnChange}/>
         {/* TABLE */}
         <TableBody
-            data={searchedUsers}
+            data={searchedData}
             columns={columns}
             options={options}
         />

@@ -36,8 +36,8 @@ const TableBody = ({ data, columns, options }) => {
             {columns.user_role && <th className="table-cell role-column">Role</th>}
             {columns.user_status && <th className="table-cell status-column">Status</th>}
             {columns.user_email && <th className="table-cell email-column">Email</th>}
-            {columns.client_avatar && <th class="table-cell avatar-column">Avatar</th>}
-            {columns.client_name && <th class="table-cell name-column">Client name</th>}
+            {columns.client_avatar && <th className="table-cell avatar-column">Avatar</th>}
+            {columns.client_name && <th className="table-cell name-column">Client name</th>}
             {options && <th className="table-cell options-column">Options</th>}
             </tr>
           </thead>
@@ -55,8 +55,8 @@ const TableBody = ({ data, columns, options }) => {
               {columns.user_role && <td className="table-cell role-column">{data.role}</td>}
               {columns.user_status && <td className="table-cell status-column">{data.status}</td>}
               {columns.user_email && <td className="table-cell email-column">{data.email}</td>}
-              {columns.client_avatar && <td class="table-cell avatar-column"><img src={data.avatar} alt="user avatar"/></td>}
-              {columns.client_name && <td class="table-cell name-column">{data.client_name}</td>}
+              {columns.client_avatar && <td className="table-cell avatar-column"><img src={data.avatar} alt="user avatar"/></td>}
+              {columns.client_name && <td className="table-cell name-column">{data.client_name}</td>}
               {options && (
                 <td className="table-cell options-column">
                     <div className="options-container">

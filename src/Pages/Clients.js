@@ -8,6 +8,9 @@ function Clients() {
 
   return (
     <div>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {data && (
       <Table 
         data={data}
         columns={{
@@ -30,7 +33,7 @@ function Clients() {
           invoice: true,
           delete: true
         }}
-      />
+      />)}
     </div>
   )
 }

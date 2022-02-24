@@ -8,6 +8,9 @@ function Users() {
 
   return (
     <div>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {data && (
       <Table 
         data={data}
         columns={{
@@ -18,7 +21,10 @@ function Users() {
           user_country: false,
           user_role: true,
           user_status: true,
-          user_email: true
+          user_email: true,
+          client_avatar: false,
+          client_name: false,
+          client_email: false,
         }}
         options={{
           time: false,
@@ -27,7 +33,7 @@ function Users() {
           invoice: false,
           delete: true
         }}
-      />
+      />)}
     </div>
   )
 }

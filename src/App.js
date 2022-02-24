@@ -13,7 +13,7 @@ function App() {
       <div className="dashboard-container">
         <div className="dashboard">
       <Routes>
-        <Route path="/" element={<Users />} />
+        <Route path="/users" element={<Users />} />
         <Route path="/developers" element={<Developers />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/my-profile" element={<MyProfile />} />

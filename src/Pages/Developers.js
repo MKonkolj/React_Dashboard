@@ -8,6 +8,9 @@ function Developers() {
 
   return (
     <div>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {data && (
       <Table 
         data={data}
         columns={{
@@ -30,7 +33,7 @@ function Developers() {
           invoice: false,
           delete: false
         }}
-      />
+      />)}
     </div>
   )
 }

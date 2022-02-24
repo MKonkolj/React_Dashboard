@@ -5,7 +5,7 @@ function Sidebar() {
     <div className="sidebar">
         <img src="./images/universal-logo-small.png" alt="universal logo"/>
         <ul className="sidebar-menu" id="sidebarMenu">
-            <li className="current"><Link to="/">Users</Link></li>
+            <li className="current"><Link to="/users">Users</Link></li>
             <li><Link to="/developers">Developers</Link></li>
             <li><Link to="/clients">Clients</Link></li>
             <li><Link to="/my-profile">My profile</Link></li>
