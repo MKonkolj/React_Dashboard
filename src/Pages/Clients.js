@@ -3,7 +3,7 @@ import useFetch from "../Hooks/useFetch";
 
 function Clients() {
 
-  // Get all users from db
+  // Get all users from db ===============================
   const { data, isLoading, error } = useFetch("http://localhost:8000/clients")
 
   return (

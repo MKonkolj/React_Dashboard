@@ -1,4 +1,4 @@
-// This handle is defined in Table.js
+// This handle is defined in Table.js ==========================
 const searchbar = ({ handleOnChange }) => {
   return (
     <div className="top-section">

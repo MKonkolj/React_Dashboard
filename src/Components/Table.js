@@ -4,15 +4,14 @@ import { useEffect, useState } from "react";
 
 function Table({ data, columns, options }) {
 
-  // Set all users initially to be displayed
+  // Set all users initially to be displayed =====================
   const [searchedData, setSearchedData] = useState();
 
   useEffect(() => {
       setSearchedData(data);
       }, [data])
 
-
-  // Filter Data by searchbox value
+  // Filter Data by searchbox value ==============================
   function handleOnChange (e) {
       let searchQuery = e.target.value.toLowerCase();
       if (columns.client_name) {
@@ -30,7 +29,6 @@ function Table({ data, columns, options }) {
           ))
       }
   }
-  
 
   return (
     <div>
