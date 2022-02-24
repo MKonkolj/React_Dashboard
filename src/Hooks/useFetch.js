@@ -7,22 +7,22 @@ const useFetch = (url) => {
   
   // FETCH USER REVIEWS
   useEffect (() => {
-      fetch (url)
-        .then (res => {
-          if(!res.ok) {
-            throw Error ("Response fetch error");
-          }
-          return res.json();
-        }).then (data => {
-          setData(data);
-          setIsLoading(false);
-          setError(null);
-        }).catch(error => {
-          console.log("errorčina!\n" + error);
-          setIsLoading(false);
-          setError(error);
-        })
-    },[url])
+    fetch (url)
+      .then (res => {
+        if(!res.ok) {
+          throw Error ("Response fetch error");
+        }
+        return res.json();
+      }).then (data => {
+        setData(data);
+        setIsLoading(false);
+        setError(null);
+      }).catch(error => {
+        console.log("errorčina!\n" + error);
+        setIsLoading(false);
+        setError(error);
+    })
+  },[url])
 
   return { data, isLoading, error }
 }
