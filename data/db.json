@@ -18,23 +18,6 @@
       "tekuci_racun": "5108752629866969"
     },
     {
-      "id": 2,
-      "avatar": {
-        "image_path": "./images/profile-images/profile-guy-one.png",
-        "image_alt": "Profile image of Waverly Rounds"
-      },
-      "first_name": "Waverly",
-      "last_name": "Rounds",
-      "email": "wrounds1@twitpic.com",
-      "street": "Dayton",
-      "city": "Banatski Dvor",
-      "country": "Serbia",
-      "password": "secret",
-      "role": "Research Nurse",
-      "status": "Active",
-      "tekuci_racun": "5108756529025907"
-    },
-    {
       "id": 3,
       "avatar": {
         "image_path": "./images/profile-images/profile-guy-two.png",
