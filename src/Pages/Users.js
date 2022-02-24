@@ -1,3 +1,4 @@
+import Loading from "../Components/Loading";
 import Table from "../Components/Table";
 import useFetch from "../Hooks/useFetch";
 
@@ -8,7 +9,7 @@ function Users() {
 
   return (
     <div>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loading />}
       {error && <p>{error}</p>}
       {data && (
       <Table 
