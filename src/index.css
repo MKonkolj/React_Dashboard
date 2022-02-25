@@ -205,10 +205,10 @@ ul li a:focus-visible {
   content: "";
   position: absolute;
   width: 10px;
-  height: 40px;
+  height: 51px;
   background-color: var(--white);
   border-radius: 5px;
-  top: 6px;
+  top: 1px;
   left: -5px;
 }
 
