@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
+import DeleteModal from "./DeleteModal";
 
 const TableBody = ({ url, columns, options }) => {
 
@@ -7,8 +8,15 @@ const TableBody = ({ url, columns, options }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
   const [error, setError] = useState(null);
+
+  const [deleteModalShow, setDeleteModalShow] = useState (false);
+  const [name, setName] = useState();
+  const [id, setId] = useState();
+
   const [reRender, setReRender] = useState(true);
   
+
+  // Initial fetch for all users
   useEffect (() => {
       fetch (url)
         .then (res => {
@@ -27,14 +35,22 @@ const TableBody = ({ url, columns, options }) => {
         })
     },[url, reRender])
 
+    // function to remote the item after confiramtion from modal
     function removeItem(id) {
       fetch(url + "/" + id, {
         method: "DELETE"
-      }).then(() => setReRender(prevReRender => !prevReRender))
+      }).then(() => {
+        setReRender(prevReRender => !prevReRender)
+        setDeleteModalShow(false);
+      })
       .catch(e => console.log("errorčina na DELETE!\n" + e))
     }
+
+
   return (
     <div className="table-div">
+      {isLoading && <Loading />}
+      {!isLoading && (
         <table className="table">
           {/* TABLE HEADER */}
             <thead>
@@ -75,7 +91,19 @@ const TableBody = ({ url, columns, options }) => {
                           {options.edit && <span className="edit-option options-icon"></span>}
                           {options.view && <a><span className="view-option options-icon"></span></a>}
                           {options.invoice && <span className="invoice-option options-icon"></span>}
-                          {options.delete && <span className="delete-option options-icon" onClick={() => removeItem(data.id)}></span>}
+                          {options.delete && <span className="delete-option options-icon"
+                            onClick={() => {
+                              setDeleteModalShow(true);
+                              setName(() => {
+                                let name = "";
+                                if (data.first_name) {
+                                  return data.first_name + " " + data.last_name;
+                                } else {
+                                  return data.client_name;
+                                }
+                              });
+                              setId(data.id)
+                            }}></span>}
                       </div>
                   </td>
                 )}
@@ -84,7 +112,8 @@ const TableBody = ({ url, columns, options }) => {
             </tbody>
           {/* TABLE BODY END */}
         </table>
-        {/* {isLoading && <Loading />} */}
+        )}
+        {deleteModalShow && <DeleteModal name={name} id={id} removeItem={removeItem} setDeleteModalShow={setDeleteModalShow}/>}
       </div>
   )
 }

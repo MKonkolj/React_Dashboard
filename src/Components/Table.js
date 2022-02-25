@@ -1,4 +1,4 @@
-import Searchbar from "../Components/Searchbar"
+import Searchbar from "../Components/Searchbar";
 import TableBody from "../Components/TableBody";
 import { useEffect, useState } from "react";
 
@@ -11,7 +11,7 @@ function Table({ url, data, columns, options }) {
       setSearchedData(data);
       }, [data])
 
-  // Filter Data by searchbox value ==============================
+  // Searchbar  ==============================
   function handleOnChange (e) {
       let searchQuery = e.target.value.toLowerCase();
       if (columns.client_name) {
@@ -30,18 +30,20 @@ function Table({ url, data, columns, options }) {
       }
   }
 
+  // Delete modal ==================================
+  const [deleteIsOpen, setDeleteIsOpen] = useState(false);
+
+  
+
   return (
     <div>
-        {/* SEARCHBAR */}
-        <Searchbar handleOnChange={handleOnChange}/>
-        {/* TABLE */}
-        <TableBody
-            url={url}
-            data={searchedData}
-            columns={columns}
-            options={options}
-        />
-        {/* TABLE END */}
+      <Searchbar handleOnChange={handleOnChange}/>
+      <TableBody
+          url={url}
+          data={searchedData}
+          columns={columns}
+          options={options}
+      />
     </div>
   )
 }

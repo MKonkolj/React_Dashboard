@@ -362,26 +362,18 @@ th.table-cell {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.25);
-  display: none;
-}
-
-.black-alpha.show {
   display: block;
 }
 
 /* DELETE MODAL */
 
 .delete-modal {
-  display: none;
+  display: block;
   width: min(90%, 600px);
   min-height: 200px;
   background: var(--white);
   text-align: center;
   padding: 30px 30px 35px 30px;
-}
-
-.delete-modal.show {
-  display: block;
 }
 
 .flex-2-1 {
@@ -700,7 +692,7 @@ th.table-cell {
   justify-content: center;
   align-items: end;
   width: 100%;
-  height: 50vh;
+  height: 30vh;
 }
 
 .lds-ripple {
