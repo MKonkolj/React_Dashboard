@@ -2,14 +2,16 @@ import Searchbar from "../Components/Searchbar";
 import TableBody from "../Components/TableBody";
 import { useEffect, useState } from "react";
 
-function Table({ url, data, columns, options }) {
+function Table({ url, columns, options }) {
 
   // Set all users initially to be displayed =====================
+  
+  const [data, setData] = useState();
   const [searchedData, setSearchedData] = useState();
 
   useEffect(() => {
-      setSearchedData(data);
-      }, [data])
+    setSearchedData(data);
+    }, [data])
 
   // Searchbar  ==============================
   function handleOnChange (e) {
@@ -30,21 +32,19 @@ function Table({ url, data, columns, options }) {
       }
   }
 
-  // Delete modal ==================================
-  const [deleteIsOpen, setDeleteIsOpen] = useState(false);
 
-  
 
   return (
-    <div>
-      <Searchbar handleOnChange={handleOnChange}/>
-      <TableBody
-          url={url}
-          data={searchedData}
-          columns={columns}
-          options={options}
-      />
-    </div>
+      <div>
+        <Searchbar handleOnChange={handleOnChange}/>
+        <TableBody
+            url={url}
+            data={searchedData}
+            columns={columns}
+            options={options}
+            setData={setData}
+        />
+      </div>
   )
 }
 

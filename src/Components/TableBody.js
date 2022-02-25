@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import DeleteModal from "./DeleteModal";
 
-const TableBody = ({ url, columns, options }) => {
+const TableBody = ({ url, data, columns, options, setData }) => {
 
  // Fetch data
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState();
   const [error, setError] = useState(null);
+  const [reRender, setReRender] = useState(true);
 
+  // State for deleteModal
   const [deleteModalShow, setDeleteModalShow] = useState (false);
   const [name, setName] = useState();
   const [id, setId] = useState();
 
-  const [reRender, setReRender] = useState(true);
+  // State for add user modal
+  
   
 
   // Initial fetch for all users
@@ -35,7 +37,7 @@ const TableBody = ({ url, columns, options }) => {
         })
     },[url, reRender])
 
-    // function to remote the item after confiramtion from modal
+    // function to remove item after confiramtion from delete modal
     function removeItem(id) {
       fetch(url + "/" + id, {
         method: "DELETE"
@@ -113,6 +115,7 @@ const TableBody = ({ url, columns, options }) => {
           {/* TABLE BODY END */}
         </table>
         )}
+        {/* MODALI */}
         {deleteModalShow && <DeleteModal name={name} id={id} removeItem={removeItem} setDeleteModalShow={setDeleteModalShow}/>}
       </div>
   )

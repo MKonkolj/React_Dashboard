@@ -1,5 +1,4 @@
 import React from 'react'
-import { ReactDOM } from 'react'
 
 function DeleteModal({name, id, removeItem, setDeleteModalShow}) {
 
