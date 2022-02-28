@@ -728,6 +728,25 @@ th.table-cell {
   }
 }  
 
+/* NO DATA  ****************************/
+
+.no-data-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.no-data-container div {
+  justify-self: end;
+  text-align: right;
+  color: var(--light-blue);
+}
+
+.no-data-container img {
+  height: 50%;
+}
+
 /* MEDIA  ****************************/
 
 @media (max-width: 992px) {
@@ -801,5 +820,15 @@ th.table-cell {
   }
   .date-picker {
       padding-left: 0;
+  }
+  .no-data-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: start;
+    gap: 2rem;
+  }
+  .no-data-container div {
+    text-align: center;
+    justify-self: center;
   }
 }

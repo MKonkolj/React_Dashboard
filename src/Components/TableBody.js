@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import DeleteModal from "./DeleteModal";
+import NoData from "./NoData";
 
 const TableBody = ({ url, data, columns, options, setData }) => {
 
@@ -52,7 +53,8 @@ const TableBody = ({ url, data, columns, options, setData }) => {
   return (
     <div className="table-div">
       {isLoading && <Loading />}
-      {!isLoading && (
+      {!isLoading && !data && <NoData />}
+      {!isLoading && data && (
         <table className="table">
           {/* TABLE HEADER */}
             <thead>
@@ -117,6 +119,7 @@ const TableBody = ({ url, data, columns, options, setData }) => {
         )}
         {/* MODALI */}
         {deleteModalShow && <DeleteModal name={name} id={id} removeItem={removeItem} setDeleteModalShow={setDeleteModalShow}/>}
+        
       </div>
   )
 }
