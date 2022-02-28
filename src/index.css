@@ -443,10 +443,7 @@ th.table-cell {
   place-items: center;
   text-align: center;
   font-size: var(--font-size-small);
-}
-
-.edit-user-image {
-  margin-inline: auto;
+  object-fit: cover;
 }
 
 .modal-right-input {
@@ -476,10 +473,6 @@ th.table-cell {
   display: flex;
   align-items: center;
   gap: 30px;
-}
-
-.edit-user-modal-btns .btn-primary {
-  padding-inline: 33px;
 }
 
 /* INVOICE MODAL */

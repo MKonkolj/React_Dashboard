@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import DeleteModal from "./DeleteModal";
+import EditModal from "./EditModal";
 import NoData from "./NoData";
 
 const TableBody = ({ url, data, columns, options, setData }) => {
@@ -11,12 +12,12 @@ const TableBody = ({ url, data, columns, options, setData }) => {
   const [reRender, setReRender] = useState(true);
 
   // State for deleteModal
-  const [deleteModalShow, setDeleteModalShow] = useState (false);
+  const [deleteModalShow, setDeleteModalShow] = useState(false);
   const [name, setName] = useState();
-  const [id, setId] = useState();
+  const [id, setId] = useState(1);
 
-  // State for add user modal
-  
+  //state for edit modal
+  const [editModalShow, setEditModalShow] = useState(false);
   
 
   // Initial fetch for all users
@@ -30,13 +31,13 @@ const TableBody = ({ url, data, columns, options, setData }) => {
         }).then (data => {
           setData(data);
           setIsLoading(false);
-          setError(null);
         }).catch(e => {
           console.log("errorčina na GET!\n" + e);
           setIsLoading(false);
           setError(error);
         })
     },[url, reRender])
+
 
     // function to remove item after confiramtion from delete modal
     function removeItem(id) {
@@ -47,6 +48,12 @@ const TableBody = ({ url, data, columns, options, setData }) => {
         setDeleteModalShow(false);
       })
       .catch(e => console.log("errorčina na DELETE!\n" + e))
+    }
+
+
+    //edit modal
+    function editItem (e) {
+
     }
 
 
@@ -92,7 +99,11 @@ const TableBody = ({ url, data, columns, options, setData }) => {
                   <td className="table-cell options-column">
                       <div className="options-container">
                           {options.time && <span className="time-option options-icon"></span>}
-                          {options.edit && <span className="edit-option options-icon"></span>}
+                          {options.edit && <span className="edit-option options-icon"
+                            onClick={() => {
+                              setEditModalShow(true)
+                              setId(data.id)
+                            }}></span>}
                           {options.view && <a><span className="view-option options-icon"></span></a>}
                           {options.invoice && <span className="invoice-option options-icon"></span>}
                           {options.delete && <span className="delete-option options-icon"
@@ -119,6 +130,8 @@ const TableBody = ({ url, data, columns, options, setData }) => {
         )}
         {/* MODALI */}
         {deleteModalShow && <DeleteModal name={name} id={id} removeItem={removeItem} setDeleteModalShow={setDeleteModalShow}/>}
+        {editModalShow && <div className="black-alpha fixed-center" onClick={() => setEditModalShow(false)}></div>}
+        <EditModal editModalShow={editModalShow} setEditModalShow={setEditModalShow} url={url} id={id} />
       </div>
   )
 }

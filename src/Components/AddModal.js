@@ -68,29 +68,52 @@ function AddModal({ addModalShow, setAddModalShow, url }) {
                 <form onSubmit={handleAddUser}>
                     <p className="modal-title">{(newUser.first_name !== "") ? (newUser.first_name + " " + newUser.last_name) : "New User"}</p>
                     <img className="add-user-image" src="" alt="Add image"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, first_name: e.target.value})} name="name" required placeholder="Name:"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, last_name: e.target.value})} name="last_name" placeholder="Last name:"/>
-                    <input className="modal-right-input" type="email" onChange={(e) => setNewUser({...newUser, email: e.target.value})} name="email" required placeholder="Email:"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, phone: e.target.value})} name="phone" placeholder="Phone:"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, street: e.target.value})} name="street" placeholder="Street:"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, city: e.target.value})} name="city" placeholder="City:"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, country: e.target.value})} name="country" placeholder="Country:"/>
-                    <input className="modal-right-input" type="password" onChange={(e) => setNewUser({...newUser, password: e.target.value})} name="password" required placeholder="Password:"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, role: e.target.value})} name="role" required placeholder="Role:"/>
+
+                    <input className="modal-right-input" type="text" name="name" required placeholder="Name:"
+                    onChange={(e) => setNewUser({...newUser, first_name: e.target.value})}/>
+
+                    <input className="modal-right-input" type="text" name="last_name" placeholder="Last name:"
+                    onChange={(e) => setNewUser({...newUser, last_name: e.target.value})}/>
+
+                    <input className="modal-right-input" type="email" name="email" required placeholder="Email:"
+                    onChange={(e) => setNewUser({...newUser, email: e.target.value})}/>
+
+                    <input className="modal-right-input" type="text" name="phone" placeholder="Phone:"
+                    onChange={(e) => setNewUser({...newUser, phone: e.target.value})}/>
+
+                    <input className="modal-right-input" type="text" name="street" placeholder="Street:"
+                    onChange={(e) => setNewUser({...newUser, street: e.target.value})}/>
+
+                    <input className="modal-right-input" type="text" name="city" placeholder="City:"
+                    onChange={(e) => setNewUser({...newUser, city: e.target.value})}/>
+
+                    <input className="modal-right-input" type="text" name="country" placeholder="Country:"
+                    onChange={(e) => setNewUser({...newUser, country: e.target.value})}/>
+
+                    <input className="modal-right-input" type="password" name="password" required placeholder="Password:"
+                    onChange={(e) => setNewUser({...newUser, password: e.target.value})}/>
+
+                    <input className="modal-right-input" type="text" name="role" required placeholder="Role:"
+                    onChange={(e) => setNewUser({...newUser, role: e.target.value})}/>
+
                     <div className="modal-right-radio-input">
                         <p>Status:</p>
                         <div>
-                            <input type="radio" name="status" value="active" onChange={(e) => setNewUser({...newUser, status: e.target.value})} checked={newUser.status == "active"}/>
+                            <input type="radio" name="status" value="active" checked={newUser.status == "active"}
+                            onChange={(e) => setNewUser({...newUser, status: e.target.value})}/>
                             <label htmlFor="active">Active</label>
                         </div>
                         <div>
-                            <input type="radio" name="status" value="inactive" onChange={(e) => setNewUser({...newUser, status: e.target.value})}/>
+                            <input type="radio" name="status" value="inactive" checked={newUser.status == "inactive"}
+                            onChange={(e) => setNewUser({...newUser, status: e.target.value})}/>
                             <label htmlFor="inactive">Inactive</label>
                         </div>
                     </div>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewUser({...newUser, tekuci_racun: e.target.value})} name="bankAccount" placeholder="Bank account:"/>
+                    <input className="modal-right-input" type="text" name="bankAccount" placeholder="Bank account:"
+                    onChange={(e) => setNewUser({...newUser, tekuci_racun: e.target.value})}/>
                     <div className="add-user-modal-btns">
-                        <button className="btn-clear" onClick={(e) => {
+                        <button className="btn-clear"
+                        onClick={(e) => {
                             e.preventDefault()
                             setAddModalShow(false)
                         }}>Cancel</button>
@@ -102,27 +125,35 @@ function AddModal({ addModalShow, setAddModalShow, url }) {
                 <form onSubmit={handleAddClient}>
                     <p className="modal-title">{(newClient.client_name !== "") ? newClient.client_name : "New Client"}</p>
                     <img className="add-user-image" src="" alt="Add image"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewClient({...newClient, client_name: e.target.value})} name="name" required placeholder="Client name:"/>
-                    <input className="modal-right-input" type="email" onChange={(e) => setNewClient({...newClient, email: e.target.value})} name="email" required placeholder="Email:"/>
-                    <input className="modal-right-input" type="text" onChange={(e) => setNewClient({...newClient, manager: e.target.value})} name="manager" placeholder="Manager:"/>
-                    <input className="modal-right-input" type="number" onChange={(e) => setNewClient({...newClient, manager_factor: e.target.value})} name="manager_factor" />
+                    <input className="modal-right-input" type="text"
+                    onChange={(e) => setNewClient({...newClient, client_name: e.target.value})} name="name" required placeholder="Client name:"/>
+                    <input className="modal-right-input" type="email" 
+                    onChange={(e) => setNewClient({...newClient, email: e.target.value})} name="email" required placeholder="Email:"/>
+                    <input className="modal-right-input" type="text" 
+                    onChange={(e) => setNewClient({...newClient, manager: e.target.value})} name="manager" placeholder="Manager:"/>
+                    <input className="modal-right-input" type="number" 
+                    onChange={(e) => setNewClient({...newClient, manager_factor: e.target.value})} name="manager_factor" />
                     <div className="modal-right-radio-input">
                         <p>Payment method:</p>
                         <div>
-                            <input type="radio" name="payment" value="PayPal" onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})} checked/>
+                            <input type="radio" name="payment" value="PayPal" checked={newClient.paymentMethod == "PayPal"}
+                            onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
                             <label htmlFor="PayPal">PayPal</label>
                         </div>
                         <div>
-                            <input type="radio" name="payment" value="wireTransfer" onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
+                            <input type="radio" name="payment" value="wireTransfer" checked={newClient.paymentMethod == "wireTransfer"}
+                            onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
                             <label htmlFor="wireTransfer">Wire transfer</label>
                         </div>
                         <div>
-                            <input type="radio" name="payment" value="bitcoin" onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
+                            <input type="radio" name="payment" value="bitcoin" checked={newClient.paymentMethod == "bitcoin"}
+                            onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
                             <label htmlFor="bitcoin">Bitcoin</label>
                         </div>
                     </div>
                     <div className="add-user-modal-btns">
-                        <button className="btn-clear" onClick={(e) => {
+                        <button className="btn-clear"
+                        onClick={(e) => {
                             e.preventDefault()
                             setAddModalShow(false)
                         }}>Cancel</button>
