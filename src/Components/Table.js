@@ -36,7 +36,7 @@ function Table({ url, columns, options }) {
 
   return (
       <div>
-        <Searchbar handleOnChange={handleOnChange}/>
+        <Searchbar handleOnChange={handleOnChange} url={url} />
         <TableBody
             url={url}
             data={searchedData}

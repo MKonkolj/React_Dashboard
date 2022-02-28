@@ -119,7 +119,6 @@ const TableBody = ({ url, data, columns, options, setData }) => {
         )}
         {/* MODALI */}
         {deleteModalShow && <DeleteModal name={name} id={id} removeItem={removeItem} setDeleteModalShow={setDeleteModalShow}/>}
-        
       </div>
   )
 }

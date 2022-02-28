@@ -139,6 +139,7 @@ ul li a:focus-visible {
   border: none;
   padding: 10px 60px;
   font-weight: 600;
+  font-size: var(--font-size-normal);
   cursor: pointer;
   text-align: center;
 }
@@ -162,8 +163,11 @@ ul li a:focus-visible {
 }
 
 .btn-clear {
+  background: transparent;
+  border: none;
   color: var(--dark-grey);
   font-weight: 600;
+  font-size: var(--font-size-normal);
 }
 
 .btn-clear:hover {
@@ -408,6 +412,7 @@ th.table-cell {
   box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.25);
   transform: translateX(480px);
   transition: transform 300ms ease-in;
+  z-index: 1000;
 }
 
 .add-user-modal.show,
@@ -449,6 +454,15 @@ th.table-cell {
   border: 1px solid var(--light-grey);
   border-radius: 4px;
   font-size: var(--font-size-small);
+}
+
+.modal-right-radio-input {
+  margin-left: 1rem;
+  font-size: var(--font-size-small);
+  color: var(--dark-grey);
+}
+.modal-right-radio-input input {
+  margin: 0.2rem 0.5rem;
 }
 
 .modal-right-input::placeholder {
