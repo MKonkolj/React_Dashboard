@@ -4,7 +4,7 @@ function MyProfile() {
     <div className="profile-hours-container grid-2-1">
       {/* PROFILE SIDE */}
       <div className="profile-container">
-        <div>
+        <div className="profile-header">
           <span className="edit-profile edit-option options-icon"></span>
           <img className="profile-avatar" src="./images/profile-images/profile-guy-one.png" alt="profile avatar"/>
           <p className="profile-title">Lorem Ipsum</p>

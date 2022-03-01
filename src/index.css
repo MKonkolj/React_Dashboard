@@ -610,6 +610,7 @@ th.table-cell {
   max-width: 340px;
   padding-right: clamp(2rem, 0.9133986928104574rem + 4.575163398692811vw, 3.75rem);
   display: grid;
+  grid-template-rows: auto auto auto;
 }
 
 .edit-profile {
