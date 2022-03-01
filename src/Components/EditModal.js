@@ -26,15 +26,18 @@ function EditModal({ editModalShow, setEditModalShow, url, id }) {
 
     function handleSaveUser(e) {
         e.preventDefault()
-        console.log(user)
         // Add user to bd
         fetch(url + "/" + id, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                'Accept':'application/json',
+                "Content-Type": "application/json" },
             body: JSON.stringify(user)
         }).then (() => {
             console.log("user changes saved");
             setEditModalShow(false);
+        }).catch (error => {
+           console.log("errorčina na DELETE!\n" + error);
         })
     }
 
@@ -63,12 +66,12 @@ function EditModal({ editModalShow, setEditModalShow, url, id }) {
             <div className="modal-right-radio-input">
                 <p>Status:</p>
                 <div>
-                    <input type="radio" name="status" value="active" checked={user.status == "active"}
+                    <input type="radio" name="status" value="Active" checked={user.status == "Active"}
                     onChange={(e) => setUser({...user, status: e.target.value})}/>
                     <label htmlFor="active">Active</label>
                 </div>
                 <div>
-                    <input type="radio" name="status" value="inactive" checked={user.status == "inactive"}
+                    <input type="radio" name="status" value="Inactive" checked={user.status == "Inactive"}
                     onChange={(e) => setUser({...user, status: e.target.value})}/>
                     <label htmlFor="inactive">Inactive</label>
                 </div>
@@ -83,6 +86,7 @@ function EditModal({ editModalShow, setEditModalShow, url, id }) {
                 }}>Cancel</button>
                 <button className="btn-primary" type="submit">Save changes</button>
             </div>
+            {console.log(user)}
         </form>)}
     </div>
   )

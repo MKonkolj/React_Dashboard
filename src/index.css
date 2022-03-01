@@ -456,7 +456,6 @@ th.table-cell {
 .modal-right-radio-input {
   margin-left: 1rem;
   font-size: var(--font-size-small);
-  color: var(--dark-grey);
 }
 .modal-right-radio-input input {
   margin: 0.2rem 0.5rem;

@@ -3,12 +3,10 @@ import Table from "../Components/Table";
 
 function Clients() {
 
-  const url = "http://localhost:8000/clients";
-
   return (
     <div>
       <Table 
-        url={url}
+        url="http://localhost:8000/clients"
         columns={{
           user_avatar: false,
           user_first_name: false,

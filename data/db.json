@@ -271,42 +271,6 @@
       "role": "Nurse Practicioner",
       "status": "Active",
       "tekuci_racun": "5108755927602291"
-    },
-    {
-      "avatar": {
-        "image_path": "./images/profile-images/ben-parker.jpg",
-        "image_alt": "Profile image of Lorem Ipsum"
-      },
-      "first_name": "Mladen",
-      "last_name": "Konkolj",
-      "email": "mladenkonkolj@gmail.com",
-      "phone": "0658475124",
-      "street": "Test 31",
-      "city": "Test",
-      "country": "Test",
-      "password": "4864968684",
-      "role": "Dev",
-      "status": "Active",
-      "tekuci_racun": "05224157",
-      "id": 17
-    },
-    {
-      "avatar": {
-        "image_path": "./images/profile-images/ben-parker.jpg",
-        "image_alt": "Profile image of Lorem Ipsum"
-      },
-      "first_name": "Mladen",
-      "last_name": "Konkolj",
-      "email": "mladenkonkolj@gmail.com",
-      "phone": "0658475124",
-      "street": "Test 31",
-      "city": "Test",
-      "country": "Test",
-      "password": "8541919",
-      "role": "Dev",
-      "status": "inactive",
-      "tekuci_racun": "05224157",
-      "id": 18
     }
   ],
   "clients": [

@@ -2,13 +2,10 @@ import Table from "../Components/Table";
 
 function Users() {
 
-  // Get all users from db
-  const url = "http://localhost:8000/users";
-
   return (
     <div>
       <Table 
-        url={url}
+        url="http://localhost:8000/users"
         columns={{
           user_avatar: true,
           user_first_name: true,

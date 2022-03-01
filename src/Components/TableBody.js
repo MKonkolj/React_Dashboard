@@ -51,12 +51,6 @@ const TableBody = ({ url, data, columns, options, setData }) => {
     }
 
 
-    //edit modal
-    function editItem (e) {
-
-    }
-
-
   return (
     <div className="table-div">
       {isLoading && <Loading />}

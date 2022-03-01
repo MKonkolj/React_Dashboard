@@ -1,11 +1,13 @@
 import Searchbar from "../Components/Searchbar";
 import TableBody from "../Components/TableBody";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
+
+//Create context
+export const UrlContext = createContext();
 
 function Table({ url, columns, options }) {
 
   // Set all users initially to be displayed =====================
-  
   const [data, setData] = useState();
   const [searchedData, setSearchedData] = useState();
 
@@ -13,18 +15,17 @@ function Table({ url, columns, options }) {
     setSearchedData(data);
     }, [data])
 
-  // Searchbar  ==============================
-  function handleOnChange (e) {
+  // Search & display  ==============================
+  function handleSearch (e) {
       let searchQuery = e.target.value.toLowerCase();
       if (columns.client_name) {
-        // search by client attributes
+        // search clients
         setSearchedData(data.filter(client => 
           client.client_name.toLowerCase().includes(searchQuery)
-          // || client.email.toLowerCase().includes(searchQuery)
         ))
       } else {
+        // search users
         setSearchedData(data.filter(user => 
-          // search by user attributes
           user.first_name.toLowerCase().includes(searchQuery)
           || user.last_name.toLowerCase().includes(searchQuery)
           || user.email.toLowerCase().includes(searchQuery)
@@ -32,11 +33,9 @@ function Table({ url, columns, options }) {
       }
   }
 
-
-
   return (
-      <div>
-        <Searchbar handleOnChange={handleOnChange} url={url} />
+      <UrlContext.Provider value={url}>
+        <Searchbar handleSearch={handleSearch} />
         <TableBody
             url={url}
             data={searchedData}
@@ -44,7 +43,7 @@ function Table({ url, columns, options }) {
             options={options}
             setData={setData}
         />
-      </div>
+      </UrlContext.Provider>
   )
 }
 

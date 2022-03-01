@@ -1,6 +1,10 @@
-import { useState } from "react"
 
-function AddModal({ addModalShow, setAddModalShow, url }) {
+import { useState, useContext } from "react"
+import { UrlContext } from "./Table"
+
+function AddModal({ addModalShow, setAddModalShow }) {
+
+    const url = useContext(UrlContext);
 
     const avatar = {
         image_path: "./images/profile-images/ben-parker.jpg",
@@ -14,7 +18,6 @@ function AddModal({ addModalShow, setAddModalShow, url }) {
         first_name: "",
         last_name: "",
         email: "",
-        phone: "",
         street: "",
         city: "",
         country: "",
@@ -42,7 +45,7 @@ function AddModal({ addModalShow, setAddModalShow, url }) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newUser)
         }).then (() => {
-            console.log("new user added to " + url);
+            console.log("new user added");
             setAddModalShow(false);
         })
     }
@@ -56,7 +59,7 @@ function AddModal({ addModalShow, setAddModalShow, url }) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newClient)
         }).then (() => {
-            console.log("new client added to " + url);
+            console.log("new client added");
             setAddModalShow(false);
         })
     }
@@ -69,47 +72,44 @@ function AddModal({ addModalShow, setAddModalShow, url }) {
                     <p className="modal-title">{(newUser.first_name !== "") ? (newUser.first_name + " " + newUser.last_name) : "New User"}</p>
                     <img className="add-user-image" src="" alt="Add image"/>
 
-                    <input className="modal-right-input" type="text" name="name" required placeholder="Name:"
+                    <input className="modal-right-input" type="text" name="name" required placeholder="Name"
                     onChange={(e) => setNewUser({...newUser, first_name: e.target.value})}/>
 
-                    <input className="modal-right-input" type="text" name="last_name" placeholder="Last name:"
+                    <input className="modal-right-input" type="text" name="last_name" placeholder="Last name"
                     onChange={(e) => setNewUser({...newUser, last_name: e.target.value})}/>
 
-                    <input className="modal-right-input" type="email" name="email" required placeholder="Email:"
+                    <input className="modal-right-input" type="email" name="email" required placeholder="Email"
                     onChange={(e) => setNewUser({...newUser, email: e.target.value})}/>
 
-                    <input className="modal-right-input" type="text" name="phone" placeholder="Phone:"
-                    onChange={(e) => setNewUser({...newUser, phone: e.target.value})}/>
-
-                    <input className="modal-right-input" type="text" name="street" placeholder="Street:"
+                    <input className="modal-right-input" type="text" name="street" placeholder="Street"
                     onChange={(e) => setNewUser({...newUser, street: e.target.value})}/>
 
-                    <input className="modal-right-input" type="text" name="city" placeholder="City:"
+                    <input className="modal-right-input" type="text" name="city" placeholder="City"
                     onChange={(e) => setNewUser({...newUser, city: e.target.value})}/>
 
-                    <input className="modal-right-input" type="text" name="country" placeholder="Country:"
+                    <input className="modal-right-input" type="text" name="country" placeholder="Country"
                     onChange={(e) => setNewUser({...newUser, country: e.target.value})}/>
 
-                    <input className="modal-right-input" type="password" name="password" required placeholder="Password:"
+                    <input className="modal-right-input" type="password" name="password" required placeholder="Password"
                     onChange={(e) => setNewUser({...newUser, password: e.target.value})}/>
 
-                    <input className="modal-right-input" type="text" name="role" required placeholder="Role:"
+                    <input className="modal-right-input" type="text" name="role" required placeholder="Role"
                     onChange={(e) => setNewUser({...newUser, role: e.target.value})}/>
 
                     <div className="modal-right-radio-input">
                         <p>Status:</p>
                         <div>
-                            <input type="radio" name="status" value="active" checked={newUser.status == "active"}
+                            <input type="radio" name="status" value="Active" checked={newUser.status == "Active"}
                             onChange={(e) => setNewUser({...newUser, status: e.target.value})}/>
                             <label htmlFor="active">Active</label>
                         </div>
                         <div>
-                            <input type="radio" name="status" value="inactive" checked={newUser.status == "inactive"}
+                            <input type="radio" name="status" value="Inactive" checked={newUser.status == "Inactive"}
                             onChange={(e) => setNewUser({...newUser, status: e.target.value})}/>
                             <label htmlFor="inactive">Inactive</label>
                         </div>
                     </div>
-                    <input className="modal-right-input" type="text" name="bankAccount" placeholder="Bank account:"
+                    <input className="modal-right-input" type="text" name="bankAccount" placeholder="Bank account"
                     onChange={(e) => setNewUser({...newUser, tekuci_racun: e.target.value})}/>
                     <div className="add-user-modal-btns">
                         <button className="btn-clear"
