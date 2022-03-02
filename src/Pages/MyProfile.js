@@ -17,7 +17,7 @@ function MyProfile() {
           <li><strong>Bank account: </strong><span> 55** **** **** **66</span></li>
           <li><strong>Status: </strong><span>&#128994; Active</span></li>
         </ul>
-        <div>
+        <div className="profile-buttons">
           <a className="insert-hours-btn btn-primary">Insert hours</a>
           <p><strong>This month: <span> 120:16:45</span></strong></p>
           <a className="log-out-btn btn-primary btn-white">Log out</a>

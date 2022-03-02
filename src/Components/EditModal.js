@@ -86,7 +86,6 @@ function EditModal({ editModalShow, setEditModalShow, url, id }) {
                 }}>Cancel</button>
                 <button className="btn-primary" type="submit">Save changes</button>
             </div>
-            {console.log(user)}
         </form>)}
     </div>
   )

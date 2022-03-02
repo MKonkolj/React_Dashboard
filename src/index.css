@@ -610,7 +610,8 @@ th.table-cell {
   max-width: 340px;
   padding-right: clamp(2rem, 0.9133986928104574rem + 4.575163398692811vw, 3.75rem);
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto 1fr;
+  gap: 2rem;
 }
 
 .edit-profile {
@@ -636,8 +637,10 @@ th.table-cell {
   line-height: 2rem;
 }
 
-.profile-info .btn-primary {
-  margin-block: 10px;
+.profile-buttons {
+  display: grid;
+  gap: 2rem;
+  align-content: start;
 }
 
 /* PROFILE TABLE SIDE */
@@ -837,5 +840,43 @@ th.table-cell {
   .no-data-container div {
     text-align: center;
     justify-self: center;
+  }
+  .profile-hours-container {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .profile-container {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    padding: 0;
+    border: none;
+  }
+  .profile-info{
+    align-self: center;
+  }
+  .profile-buttons {
+    text-align: center;
+    grid-column: span 2;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .insert-hours-btn,
+  .log-out-btn {
+    width: max-content;
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+  .profile-buttons {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+  .profile-info {
+    margin-inline: auto;
   }
 }
