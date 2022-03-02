@@ -6,7 +6,7 @@
         "image_path": "./images/profile-images/profile-woman.png",
         "image_alt": "Profile image of Loreta Ipsum"
       },
-      "first_name": "Loretadsadaa",
+      "first_name": "Loreta",
       "last_name": "Ipsum",
       "email": "loretaipsum@blogtalkradio.com",
       "street": "Muir",
@@ -30,8 +30,8 @@
       "city": "Banatski Dvor",
       "country": "Serbia",
       "password": "secret",
-      "role": "Research Nurse",
-      "status": "Active",
+      "role": "Research Assistant",
+      "status": "Inactive",
       "tekuci_racun": "5108756529025907"
     },
     {

@@ -39,8 +39,8 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
         e.preventDefault()
         // Add user to bd
         fetch(url + "/" + id, {
-            method: "POST",
-            headers: { 
+            method: "PUT",
+            headers: {
                 'Accept':'application/json',
                 "Content-Type": "application/json" },
             body: JSON.stringify(user)
@@ -79,14 +79,14 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
             <div className="modal-right-radio-input">
                 <p>Status:</p>
                 <div>
-                    <input type="radio" name="status" value="Active" checked={user.status == "Active"}
+                    <input type="radio" id="status-active" name="status" value="Active" checked={user.status == "Active"}
                     onChange={(e) => setUser({...user, status: e.target.value})}/>
-                    <label htmlFor="active">Active</label>
+                    <label htmlFor="status-active">Active</label>
                 </div>
                 <div>
-                    <input type="radio" name="status" value="Inactive" checked={user.status == "Inactive"}
+                    <input type="radio" id="status-inactive" name="status" value="Inactive" checked={user.status == "Inactive"}
                     onChange={(e) => setUser({...user, status: e.target.value})}/>
-                    <label htmlFor="inactive">Inactive</label>
+                    <label htmlFor="status-inactive">Inactive</label>
                 </div>
             </div>
             <input className="modal-right-input" type="text" name="bankAccount" value={user.tekuci_racun} placeholder="Bank account"
@@ -116,19 +116,19 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
                 <div className="modal-right-radio-input">
                     <p>Payment method:</p>
                     <div>
-                        <input type="radio" name="paymentMethod" value="PayPal" checked={user.paymentMethod == "PayPal"}
+                        <input type="radio" id="payment-paypal" name="paymentMethod" value="PayPal" checked={user.paymentMethod == "PayPal"}
                         onChange={(e) => setUser({...user, paymentMethod: e.target.value})}/>
-                        <label htmlFor="PayPal">PayPal</label>
+                        <label htmlFor="payment-paypal">PayPal</label>
                     </div>
                     <div>
-                        <input type="radio" name="paymentMethod" value="wireTransfer" checked={user.paymentMethod == "wireTransfer"}
+                        <input type="radio" id="payment-wire" name="paymentMethod" value="wireTransfer" checked={user.paymentMethod == "wireTransfer"}
                         onChange={(e) => setUser({...user, paymentMethod: e.target.value})}/>
-                        <label htmlFor="wireTransfer">Wire transfer</label>
+                        <label htmlFor="payment-wire">Wire transfer</label>
                     </div>
                     <div>
-                        <input type="radio" name="paymentMethod" value="bitcoin" checked={user.paymentMethod == "bitcoin"}
+                        <input type="radio" id="payment-bitcoin" name="paymentMethod" value="bitcoin" checked={user.paymentMethod == "bitcoin"}
                         onChange={(e) => setUser({...user, paymentMethod: e.target.value})}/>
-                        <label htmlFor="bitcoin">Bitcoin</label>
+                        <label htmlFor="payment-bitcoin">Bitcoin</label>
                     </div>
                 </div>
                 <div className="add-user-modal-btns">

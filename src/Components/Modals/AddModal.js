@@ -105,14 +105,14 @@ function AddModal({ addModalShow, setAddModalShow }) {
                     <div className="modal-right-radio-input">
                         <p>Status:</p>
                         <div>
-                            <input type="radio" name="status" value="Active" checked={newUser.status == "Active"}
+                            <input type="radio" id="status-active" name="status" value="Active" checked={newUser.status == "Active"}
                             onChange={(e) => setNewUser({...newUser, status: e.target.value})}/>
-                            <label htmlFor="active">Active</label>
+                            <label htmlFor="status-active">Active</label>
                         </div>
                         <div>
-                            <input type="radio" name="status" value="Inactive" checked={newUser.status == "Inactive"}
+                            <input type="radio" id="status-inactive" name="status" value="Inactive" checked={newUser.status == "Inactive"}
                             onChange={(e) => setNewUser({...newUser, status: e.target.value})}/>
-                            <label htmlFor="inactive">Inactive</label>
+                            <label htmlFor="status-inactive">Inactive</label>
                         </div>
                     </div>
                     <input className="modal-right-input" type="text" name="bankAccount" placeholder="Bank account"
@@ -142,19 +142,19 @@ function AddModal({ addModalShow, setAddModalShow }) {
                     <div className="modal-right-radio-input">
                         <p>Payment method:</p>
                         <div>
-                            <input type="radio" name="payment" value="PayPal" checked={newClient.paymentMethod == "PayPal"}
+                            <input type="radio" id="payment-paypal" name="payment" value="PayPal" checked={newClient.paymentMethod == "PayPal"}
                             onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
-                            <label htmlFor="PayPal">PayPal</label>
+                            <label htmlFor="payment-paypal">PayPal</label>
                         </div>
                         <div>
-                            <input type="radio" name="payment" value="wireTransfer" checked={newClient.paymentMethod == "wireTransfer"}
+                            <input type="radio" id="payment-wire" name="payment" value="wireTransfer" checked={newClient.paymentMethod == "wireTransfer"}
                             onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
-                            <label htmlFor="wireTransfer">Wire transfer</label>
+                            <label htmlFor="payment-wire">Wire transfer</label>
                         </div>
                         <div>
-                            <input type="radio" name="payment" value="bitcoin" checked={newClient.paymentMethod == "bitcoin"}
+                            <input type="radio" id="payment-bitcoin" name="payment" value="bitcoin" checked={newClient.paymentMethod == "bitcoin"}
                             onChange={(e) => setNewClient({...newClient, paymentMethod: e.target.value})}/>
-                            <label htmlFor="bitcoin">Bitcoin</label>
+                            <label htmlFor="payment-bitcoin">Bitcoin</label>
                         </div>
                     </div>
                     <div className="add-user-modal-btns">
