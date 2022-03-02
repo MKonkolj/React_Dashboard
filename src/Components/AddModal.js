@@ -3,6 +3,9 @@ import { useState, useContext } from "react"
 import { UrlContext } from "./Table"
 
 function AddModal({ addModalShow, setAddModalShow }) {
+    // in parent:
+    // {addModalShow && <div className="black-alpha fixed-center" onClick={() => setAddModalShow(false)}></div>}
+    // <AddModal addModalShow={addModalShow} setAddModalShow={setAddModalShow} />
 
     const url = useContext(UrlContext);
 
