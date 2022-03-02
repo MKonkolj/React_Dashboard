@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { TableContext } from "../Table"
+import { AppContext } from "../../App"
 
 function DeleteModal({name, id, setDeleteModalShow}) {
   // in parent:
@@ -19,7 +19,7 @@ function DeleteModal({name, id, setDeleteModalShow}) {
   //   setId(data.id)
   // }}
 
-  const { url, setReRender } = useContext(TableContext);
+  const { url, setReRender } = useContext(AppContext);
 
   // function to remove item after confiramtion from delete modal
   function removeItem(id) {

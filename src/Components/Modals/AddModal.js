@@ -1,6 +1,6 @@
 
 import { useState, useContext } from "react"
-import { TableContext } from "../Table"
+import { AppContext } from "../../App"
 
 function AddModal({ addModalShow, setAddModalShow }) {
     // in parent:
@@ -9,7 +9,7 @@ function AddModal({ addModalShow, setAddModalShow }) {
     // to callback:
     // onClick={() => setAddModalShow(true)}
 
-    const { url, reRender, setReRender } = useContext(TableContext);
+    const { url, reRender, setReRender } = useContext(AppContext);
 
     const avatar = {
         image_path: "./images/profile-images/ben-parker.jpg",

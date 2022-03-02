@@ -3,7 +3,8 @@ import Loading from "./Loaders/Loading";
 import DeleteModal from "./Modals/DeleteModal";
 import EditModal from "./Modals/EditModal";
 import NoData from "./Loaders/NoData";
-import { TableContext } from "./Table";
+import { AppContext } from "../App";
+import { Link } from "react-router-dom";
 
 const TableBody = ({ data, columns, options, setData }) => {
 
@@ -18,7 +19,7 @@ const TableBody = ({ data, columns, options, setData }) => {
   //state for edit modal
   const [editModalShow, setEditModalShow] = useState(false);
   
-  const { url, reRender } = useContext(TableContext)
+  const { url, reRender } = useContext(AppContext)
 
   // Initial fetch for all users
   useEffect (() => {
@@ -64,9 +65,9 @@ const TableBody = ({ data, columns, options, setData }) => {
             {/* TABLER HEADER END */}
             {/* TABLE BODY */}
             <tbody>
-            {data && data.map((data, index) => {
+            {data && data.map((data) => {
               return(
-                <tr key={index}>
+                <tr key={data.id}>
                 {columns.user_avatar && <td className="table-cell avatar-column"><img src={data.avatar.image_path} alt={data.avatar.image_alt}/></td>}
                 {columns.user_first_name && <td className="table-cell name-column">{data.first_name}</td>}
                 {columns.user_last_name && <td className="table-cell surname-column">{data.last_name}</td>}
@@ -86,7 +87,7 @@ const TableBody = ({ data, columns, options, setData }) => {
                               setEditModalShow(true)
                               setId(data.id)
                             }}></span>}
-                          {options.view && <a><span className="view-option options-icon"></span></a>}
+                          {options.view && <Link to={`/user/${data.id}`}><span className="view-option options-icon"></span></Link>}
                           {options.invoice && <span className="invoice-option options-icon"></span>}
                           {options.delete && <span className="delete-option options-icon"
                             onClick={() => {

@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react"
 import Loading from "../Loaders/Loading"
-import { TableContext } from "../Table"
+import { AppContext } from "../../App"
 
 function EditModal({ editModalShow, setEditModalShow, id }) {
     // in parent:
@@ -12,7 +12,7 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
     //     setId(data.id)
     //   }}
 
-    const { url, setReRender } = useContext(TableContext);
+    const { url, setReRender } = useContext(AppContext);
 
     //fetch selected user data
     const [isLoading, setIsLoading] = useState(true);

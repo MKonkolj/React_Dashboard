@@ -2,18 +2,7 @@ import Searchbar from "../Components/Searchbar";
 import TableBody from "../Components/TableBody";
 import { useEffect, useState, createContext } from "react";
 
-//Create context
-export const TableContext = createContext();
-
-function Table({ url, columns, options }) {
-  // useContext variables
-  const [reRender, setReRender] = useState(true);
-
-  const context = {
-    url: url,
-    reRender: reRender,
-    setReRender
-  }
+function Table({ columns, options }) {
 
   // Set all users initially to be displayed =====================
   const [data, setData] = useState();
@@ -42,16 +31,15 @@ function Table({ url, columns, options }) {
   }
 
   return (
-      <TableContext.Provider value={context}>
+      <>
         <Searchbar handleSearch={handleSearch} />
         <TableBody
-            url={url}
             data={searchedData}
             columns={columns}
             options={options}
             setData={setData}
         />
-      </TableContext.Provider>
+      </>
   )
 }
 

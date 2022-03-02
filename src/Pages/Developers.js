@@ -1,11 +1,18 @@
+import { useContext, useEffect } from "react";
+import { AppContext } from "../App";
 import Table from "../Components/Table";
 
 function Developers() {
 
+  const { setUrl } = useContext(AppContext);
+
+  useEffect (() => {
+    setUrl("http://localhost:8000/users")
+  })
+
   return (
     <div>
-      <Table 
-        url="http://localhost:8000/users"
+      <Table
         columns={{
           user_avatar: true,
           user_first_name: true,

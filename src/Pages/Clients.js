@@ -1,12 +1,18 @@
-
+import { useContext, useEffect } from "react";
+import { AppContext } from "../App";
 import Table from "../Components/Table";
 
 function Clients() {
 
+  const { setUrl } = useContext(AppContext);
+
+  useEffect (() => {
+    setUrl("http://localhost:8000/clients")
+  })
+
   return (
     <div>
-      <Table 
-        url="http://localhost:8000/clients"
+      <Table
         columns={{
           user_avatar: false,
           user_first_name: false,

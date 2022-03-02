@@ -4,7 +4,7 @@ function Sidebar() {
   return (
     <div>
       <div className="sidebar">
-          <img src="./images/universal-logo-small.png" alt="universal logo"/>
+          <img src="../images/universal-logo-small.png" alt="universal logo"/>
           <ul className="sidebar-menu" id="sidebarMenu">
               <li><NavLink to="/users">Users</NavLink></li>
               <li><NavLink to="/developers">Developers</NavLink></li>
