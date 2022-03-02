@@ -1,13 +1,15 @@
 
 import { useState, useContext } from "react"
-import { UrlContext } from "./Table"
+import { TableContext } from "../Table"
 
 function AddModal({ addModalShow, setAddModalShow }) {
     // in parent:
     // {addModalShow && <div className="black-alpha fixed-center" onClick={() => setAddModalShow(false)}></div>}
     // <AddModal addModalShow={addModalShow} setAddModalShow={setAddModalShow} />
+    // to callback:
+    // onClick={() => setAddModalShow(true)}
 
-    const url = useContext(UrlContext);
+    const { url, reRender, setReRender } = useContext(TableContext);
 
     const avatar = {
         image_path: "./images/profile-images/ben-parker.jpg",
@@ -26,7 +28,7 @@ function AddModal({ addModalShow, setAddModalShow }) {
         country: "",
         password: "",
         role: "",
-        status: "active",
+        status: "Active",
         tekuci_racun: ""
     })
 
@@ -50,6 +52,7 @@ function AddModal({ addModalShow, setAddModalShow }) {
         }).then (() => {
             console.log("new user added");
             setAddModalShow(false);
+            setReRender(prevReRender => !prevReRender)
         })
     }
 

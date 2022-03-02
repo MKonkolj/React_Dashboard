@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import Loading from "./Loading";
-import DeleteModal from "./DeleteModal";
-import EditModal from "./EditModal";
-import NoData from "./NoData";
+import { useContext, useEffect, useState } from "react";
+import Loading from "./Loaders/Loading";
+import DeleteModal from "./Modals/DeleteModal";
+import EditModal from "./Modals/EditModal";
+import NoData from "./Loaders/NoData";
+import { TableContext } from "./Table";
 
-const TableBody = ({ url, data, columns, options, setData }) => {
+const TableBody = ({ data, columns, options, setData }) => {
 
  // Fetch data
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [reRender, setReRender] = useState(true);
 
   // State for deleteModal
   const [deleteModalShow, setDeleteModalShow] = useState(false);
   const [name, setName] = useState();
   const [id, setId] = useState(1);
-
   //state for edit modal
   const [editModalShow, setEditModalShow] = useState(false);
   
+  const { url, reRender } = useContext(TableContext)
 
   // Initial fetch for all users
   useEffect (() => {
@@ -37,18 +37,6 @@ const TableBody = ({ url, data, columns, options, setData }) => {
           setError(error);
         })
     },[url, reRender])
-
-
-    // function to remove item after confiramtion from delete modal
-    function removeItem(id) {
-      fetch(url + "/" + id, {
-        method: "DELETE"
-      }).then(() => {
-        setReRender(prevReRender => !prevReRender)
-        setDeleteModalShow(false);
-      })
-      .catch(e => console.log("errorčina na DELETE!\n" + e))
-    }
 
 
   return (
@@ -123,7 +111,7 @@ const TableBody = ({ url, data, columns, options, setData }) => {
         </table>
         )}
         {/* MODALI */}
-        {deleteModalShow && <DeleteModal name={name} id={id} removeItem={removeItem} setDeleteModalShow={setDeleteModalShow}/>}
+        {deleteModalShow && <DeleteModal name={name} id={id} setDeleteModalShow={setDeleteModalShow}/>}
         {editModalShow && <div className="black-alpha fixed-center" onClick={() => setEditModalShow(false)}></div>}
         <EditModal editModalShow={editModalShow} setEditModalShow={setEditModalShow} url={url} id={id} />
       </div>

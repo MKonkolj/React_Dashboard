@@ -1,5 +1,5 @@
 import { useState } from "react"
-import AddModal from "./AddModal"
+import AddModal from "./Modals/AddModal"
 
 const Searchbar = ({ handleSearch }) => {
 

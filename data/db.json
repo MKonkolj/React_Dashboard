@@ -293,15 +293,6 @@
       "paymentMethod": "Stemi"
     },
     {
-      "id": 3,
-      "client_name": "Smile holding",
-      "avatar": "https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      "email": "unify@test.com",
-      "manager": "Mirko Vrknic",
-      "manager_factor": "1",
-      "paymentMethod": "PayPal"
-    },
-    {
       "id": 4,
       "client_name": "Bon Ton",
       "avatar": "https://images.unsplash.com/photo-1602934445884-da0fa1c9d3b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=958&q=80",
@@ -309,42 +300,6 @@
       "manager": "Jelisaveta Milovic",
       "manager_factor": "1",
       "paymentMethod": "PayPal"
-    },
-    {
-      "id": 5,
-      "client_name": "C Dounts LTD",
-      "avatar": "https://images.unsplash.com/photo-1516876437184-593fda40c7ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
-      "email": "unify@test.com",
-      "manager": "Jelena Ivanovic",
-      "manager_factor": "0.5",
-      "paymentMethod": "Cash"
-    },
-    {
-      "avatar": {
-        "image_path": "./images/profile-images/ben-parker.jpg",
-        "image_alt": "Profile image of Lorem Ipsum"
-      },
-      "first_name": "",
-      "last_name": "",
-      "email": "",
-      "phone": "",
-      "street": "",
-      "city": "",
-      "country": "",
-      "password": "",
-      "role": "",
-      "status": "active",
-      "tekuci_racun": "",
-      "id": 6
-    },
-    {
-      "avatar": "https://media.istockphoto.com/photos/smart-home-symbol-picture-id1314037715?k=20&m=1314037715&s=612x612&w=0&h=hDYBWJEgIP66xyqwKPw9UbHLg6g1WhcKENjLgRQbs1s=",
-      "client_name": "Extract",
-      "email": "mladenkonkolj@gmail.com",
-      "manager": "Stevan",
-      "manager_factor": "3",
-      "paymentMethod": "PayPal",
-      "id": 7
     }
   ]
 }

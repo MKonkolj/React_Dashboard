@@ -3,9 +3,17 @@ import TableBody from "../Components/TableBody";
 import { useEffect, useState, createContext } from "react";
 
 //Create context
-export const UrlContext = createContext();
+export const TableContext = createContext();
 
 function Table({ url, columns, options }) {
+  // useContext variables
+  const [reRender, setReRender] = useState(true);
+
+  const context = {
+    url: url,
+    reRender: reRender,
+    setReRender
+  }
 
   // Set all users initially to be displayed =====================
   const [data, setData] = useState();
@@ -34,7 +42,7 @@ function Table({ url, columns, options }) {
   }
 
   return (
-      <UrlContext.Provider value={url}>
+      <TableContext.Provider value={context}>
         <Searchbar handleSearch={handleSearch} />
         <TableBody
             url={url}
@@ -43,7 +51,7 @@ function Table({ url, columns, options }) {
             options={options}
             setData={setData}
         />
-      </UrlContext.Provider>
+      </TableContext.Provider>
   )
 }
 
