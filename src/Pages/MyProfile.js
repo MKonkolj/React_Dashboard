@@ -1,13 +1,13 @@
-import Profile from "../Components/Profile"
 import Tasks from "../Components/Tasks"
 
 function MyProfile() {
 
+  // ovde će se trebati postaviti navigate to 
+
   return (
-    <div className="profile-hours-container grid-2-1">
-      <Profile />
+    <>
       <Tasks />
-    </div>
+    </>
   )
 }
 

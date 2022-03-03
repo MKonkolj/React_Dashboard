@@ -75,7 +75,7 @@ const TableBody = ({ data, columns, options, setData }) => {
                 {columns.user_country && <td className="table-cell country-column">{data.country}</td>}
                 {columns.user_role && <td className="table-cell role-column">{data.role}</td>}
                 {columns.user_status && <td className="table-cell status-column">{data.status}</td>}
-                {columns.user_email && <td className="table-cell email-column">{data.email}</td>}
+                {columns.user_email && <td className="table-cell email-column"><a href={"mailto:" + data.email}>{data.email}</a></td>}
                 {columns.client_avatar && <td className="table-cell avatar-column"><img src={data.avatar} alt="user avatar"/></td>}
                 {columns.client_name && <td className="table-cell name-column">{data.client_name}</td>}
                 {options && (

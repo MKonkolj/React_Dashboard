@@ -13,8 +13,8 @@ export const AppContext = createContext();
 
 function App() {
   // useContext variables
-  const [reRender, setReRender] = useState(true);
-  const [url, setUrl] = useState("http://localhost:8000/users");
+  const [reRender, setReRender] = useState(true)
+  const [url, setUrl] = useState("http://localhost:8000/users")
 
   const context = {
     url: url,

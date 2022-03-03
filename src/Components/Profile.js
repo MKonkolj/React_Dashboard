@@ -7,10 +7,13 @@ function Profile({ id }) {
   // Fetch data
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [ user, setUser ] = useState("")
+  const [user, setUser] = useState("")
 
   const { reRender } = useContext(AppContext)
   const [ editModalShow, setEditModalShow] = useState(false)
+  const [ tasksTime, setTasksTime] = useState(0)
+
+  const date = new Date
 
   // fetch user data
   useEffect (() => {
@@ -30,6 +33,24 @@ function Profile({ id }) {
     })
   }, [reRender])
 
+    //fetch and calc total task time this month
+    useEffect (() => {
+      fetch("http://localhost:8080/mytasks")
+      .then(res => {
+      if (!res.ok) {
+          throw Error ("Response fetch error")
+      }
+      return res.json()
+      }).then(data => {
+        setTasksTime(0)
+        let tasksThisMonth = data.filter(task => task.date.slice(3, 5) == 11)
+        tasksThisMonth.map(task => setTasksTime(prevTime => prevTime + task.time))
+      }).catch(error => {
+      console.log("errorčina na GET!\n" + error)
+      setError(error)
+      })
+  }, [user])
+
   return (
     <>
     {isLoading ? <Loading /> : (
@@ -44,14 +65,14 @@ function Profile({ id }) {
         <ul className="profile-info">
           <li><strong>First Name: </strong><span>{user.first_name}</span></li>
           <li><strong>Last Name: </strong><span>{user.last_name}</span></li>
-          <li><strong>Email: </strong><span>{user.email}</span></li>
+          <li><strong>Email: </strong><span><a href={"mailto:" + user.email}>{user.email}</a></span></li>
           <li><strong>Role: </strong><span> {user.role}</span></li>
           <li><strong>Bank account: </strong><span>{user.tekuci_racun}</span></li>
           <li><strong>Status: </strong><span>{(user.status == "Active") ? "🟢 Active" : "🔴 Inactive"}</span></li>
         </ul>
         <div className="profile-buttons">
           <a className="insert-hours-btn btn-primary">Insert hours</a>
-          <p><strong>This month: <span> 120:16:45</span></strong></p>
+          <p><strong>This month: {Math.floor(tasksTime/60) + "h "+ tasksTime % 60 + "min"}</strong></p>
           <a className="log-out-btn btn-primary btn-white">Log out</a>
         </div>
     </div>
