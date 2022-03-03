@@ -79,14 +79,16 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
             <div className="modal-right-radio-input">
                 <p>Status:</p>
                 <div>
+                    <label htmlFor="status-active">
                     <input type="radio" id="status-active" name="status" value="Active" checked={data.status == "Active"}
                     onChange={(e) => setData({...data, status: e.target.value})}/>
-                    <label htmlFor="status-active">Active</label>
+                    Active</label>
                 </div>
                 <div>
+                    <label htmlFor="status-inactive">
                     <input type="radio" id="status-inactive" name="status" value="Inactive" checked={data.status == "Inactive"}
                     onChange={(e) => setData({...data, status: e.target.value})}/>
-                    <label htmlFor="status-inactive">Inactive</label>
+                    Inactive</label>
                 </div>
             </div>
             <input className="modal-right-input" type="text" name="bankAccount" value={data.tekuci_racun} placeholder="Bank account"
@@ -120,19 +122,22 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
                 <div className="modal-right-radio-input">
                     <p>Payment method:</p>
                     <div>
+                        <label htmlFor="payment-paypal">
                         <input type="radio" id="payment-paypal" name="paymentMethod" value="PayPal" checked={data.paymentMethod == "PayPal"}
                         onChange={(e) => setData({...data, paymentMethod: e.target.value})}/>
-                        <label htmlFor="payment-paypal">PayPal</label>
+                        PayPal</label>
                     </div>
                     <div>
+                        <label htmlFor="payment-wire">
                         <input type="radio" id="payment-wire" name="paymentMethod" value="wireTransfer" checked={data.paymentMethod == "wireTransfer"}
                         onChange={(e) => setData({...data, paymentMethod: e.target.value})}/>
-                        <label htmlFor="payment-wire">Wire transfer</label>
+                        Wire transfer</label>
                     </div>
                     <div>
+                        <label htmlFor="payment-bitcoin">
                         <input type="radio" id="payment-bitcoin" name="paymentMethod" value="bitcoin" checked={data.paymentMethod == "bitcoin"}
                         onChange={(e) => setData({...data, paymentMethod: e.target.value})}/>
-                        <label htmlFor="payment-bitcoin">Bitcoin</label>
+                        Bitcoin</label>
                     </div>
                 </div>
                 <div className="add-user-modal-btns">
