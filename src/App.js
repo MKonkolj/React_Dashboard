@@ -7,6 +7,7 @@ import { createContext, useState } from "react"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ProfilePage from "./Pages/ProfilePage";
 import ClientPage from "./Pages/ClientPage"
+import LoginPage from "./Pages/LoginPage"
 
 //Create context
 export const AppContext = createContext();
@@ -23,11 +24,16 @@ function App() {
     setReRender
   }
 
+  const [ auth, setAuth ] = useState(true)
+
   return (
     <AppContext.Provider value={context}>
       <div className="App">
         <div className="grid-2-1">
-          <BrowserRouter>
+          {!auth && <BrowserRouter>
+            <LoginPage />
+          </BrowserRouter>}
+          {auth && <BrowserRouter>
           <Sidebar />
           <div className="dashboard-container">
             <div className="dashboard">
@@ -41,7 +47,7 @@ function App() {
           </Routes>
             </div>
           </div>
-          </BrowserRouter>
+          </BrowserRouter>}
         </div>
       </div>
     </AppContext.Provider>
