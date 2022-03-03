@@ -87,7 +87,9 @@ const TableBody = ({ data, columns, options, setData }) => {
                               setEditModalShow(true)
                               setId(data.id)
                             }}></span>}
-                          {options.view && <Link to={`/user/${data.id}`}><span className="view-option options-icon"></span></Link>}
+                          {options.view && <Link to={
+                            (url.includes("users") ?  `/user/${data.id}` :  `/clients/${data.id}`)
+                            }><span className="view-option options-icon"></span></Link>}
                           {options.invoice && <span className="invoice-option options-icon"></span>}
                           {options.delete && <span className="delete-option options-icon"
                             onClick={() => {
@@ -114,7 +116,7 @@ const TableBody = ({ data, columns, options, setData }) => {
         {/* MODALI */}
         {deleteModalShow && <DeleteModal name={name} id={id} setDeleteModalShow={setDeleteModalShow}/>}
         {editModalShow && <div className="black-alpha fixed-center" onClick={() => setEditModalShow(false)}></div>}
-        <EditModal editModalShow={editModalShow} setEditModalShow={setEditModalShow} url={url} id={id} />
+        <EditModal editModalShow={editModalShow} setEditModalShow={setEditModalShow} id={id} />
       </div>
   )
 }

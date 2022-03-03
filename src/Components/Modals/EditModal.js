@@ -17,7 +17,7 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
     //fetch selected user data
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [user, setUser] = useState();
+    const [data, setData] = useState();
     
     useEffect (() => {
         fetch(url + "/" + id)
@@ -26,7 +26,7 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
                 throw Error ("Response fetch error")
             } return res.json();
         }).then (data => {
-            setUser(data)
+            setData(data)
             setIsLoading(false)
         }).catch (error => {
             console.log("errorčina na GET!\n" + error);
@@ -43,7 +43,7 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
             headers: {
                 'Accept':'application/json',
                 "Content-Type": "application/json" },
-            body: JSON.stringify(user)
+            body: JSON.stringify(data)
         }).then (() => {
             console.log("user changes saved");
             setEditModalShow(false);
@@ -56,41 +56,41 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
   return (
     <div className={editModalShow ? "edit-user-modal show" : "edit-user-modal"}>
         {isLoading && <Loading />}
-        {user && (url.slice(22) == "users") && (
+        {data && (url.slice(22) == "users") && (
         <form onSubmit={(e) => handleUpdateUser(e)}>
-            <p className="modal-title">{user.first_name + " " + user.last_name}</p>
-            <img className="add-user-image" src={user.avatar.image_path} alt={"avatar for " + user.first_name + " " + user.last_name}/>
-            <input className="modal-right-input" type="text" name="name" required value={user.first_name} placeholder="Name"
-            onChange={(e) => setUser({...user, first_name: e.target.value})}/>
-            <input className="modal-right-input" type="text" name="last_name" value={user.last_name} placeholder="Last name"
-            onChange={(e) => setUser({...user, last_name: e.target.value})}/>
-            <input className="modal-right-input" type="email" name="email" required value={user.email} placeholder="Email"
-            onChange={(e) => setUser({...user, email: e.target.value})}/>
-            <input className="modal-right-input" type="text" name="street" value={user.street} placeholder="Street"
-            onChange={(e) => setUser({...user, street: e.target.value})}/>
-            <input className="modal-right-input" type="text" name="city" value={user.city} placeholder="City"
-            onChange={(e) => setUser({...user, city: e.target.value})}/>
-            <input className="modal-right-input" type="text" name="country" value={user.country} placeholder="Country"
-            onChange={(e) => setUser({...user, country: e.target.value})}/>
-            <input className="modal-right-input" type="password" name="password" required value={user.password} placeholder="Password"
-            onChange={(e) => setUser({...user, password: e.target.value})}/>
-            <input className="modal-right-input" type="text" name="role" required value={user.role} placeholder="Role"
-            onChange={(e) => setUser({...user, role: e.target.value})}/>
+            <p className="modal-title">{data.first_name + " " + data.last_name}</p>
+            <img className="add-user-image" src={"." + data.avatar.image_path} alt={"avatar for " + data.first_name + " " + data.last_name}/>
+            <input className="modal-right-input" type="text" name="name" required value={data.first_name} placeholder="Name"
+            onChange={(e) => setData({...data, first_name: e.target.value})}/>
+            <input className="modal-right-input" type="text" name="last_name" value={data.last_name} placeholder="Last name"
+            onChange={(e) => setData({...data, last_name: e.target.value})}/>
+            <input className="modal-right-input" type="email" name="email" required value={data.email} placeholder="Email"
+            onChange={(e) => setData({...data, email: e.target.value})}/>
+            <input className="modal-right-input" type="text" name="street" value={data.street} placeholder="Street"
+            onChange={(e) => setData({...data, street: e.target.value})}/>
+            <input className="modal-right-input" type="text" name="city" value={data.city} placeholder="City"
+            onChange={(e) => setData({...data, city: e.target.value})}/>
+            <input className="modal-right-input" type="text" name="country" value={data.country} placeholder="Country"
+            onChange={(e) => setData({...data, country: e.target.value})}/>
+            <input className="modal-right-input" type="password" name="password" required value={data.password} placeholder="Password"
+            onChange={(e) => setData({...data, password: e.target.value})}/>
+            <input className="modal-right-input" type="text" name="role" required value={data.role} placeholder="Role"
+            onChange={(e) => setData({...data, role: e.target.value})}/>
             <div className="modal-right-radio-input">
                 <p>Status:</p>
                 <div>
-                    <input type="radio" id="status-active" name="status" value="Active" checked={user.status == "Active"}
-                    onChange={(e) => setUser({...user, status: e.target.value})}/>
+                    <input type="radio" id="status-active" name="status" value="Active" checked={data.status == "Active"}
+                    onChange={(e) => setData({...data, status: e.target.value})}/>
                     <label htmlFor="status-active">Active</label>
                 </div>
                 <div>
-                    <input type="radio" id="status-inactive" name="status" value="Inactive" checked={user.status == "Inactive"}
-                    onChange={(e) => setUser({...user, status: e.target.value})}/>
+                    <input type="radio" id="status-inactive" name="status" value="Inactive" checked={data.status == "Inactive"}
+                    onChange={(e) => setData({...data, status: e.target.value})}/>
                     <label htmlFor="status-inactive">Inactive</label>
                 </div>
             </div>
-            <input className="modal-right-input" type="text" name="bankAccount" value={user.tekuci_racun} placeholder="Bank account"
-            onChange={(e) => setUser({...user, tekuci_racun: e.target.value})}/>
+            <input className="modal-right-input" type="text" name="bankAccount" value={data.tekuci_racun} placeholder="Bank account"
+            onChange={(e) => setData({...data, tekuci_racun: e.target.value})}/>
             <div className="add-user-modal-btns">
                 <button className="btn-clear"
                 onClick={(e) => {
@@ -100,34 +100,38 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
                 <button className="btn-primary" type="submit">Save changes</button>
             </div>
         </form>)}
-        {user && (url.slice(22) == "clients") && (
+        {data && (url.slice(22) == "clients") && (
             // CLIENT FORM
             <form onSubmit={handleUpdateUser}>
-                <p className="modal-title">{user.client_name}</p>
+                <p className="modal-title">{data.client_name}</p>
                 <img className="add-user-image" src="" alt="Add image"/>
                 <input className="modal-right-input" type="text" name="client_name" required placeholder="Client name:"
-                onChange={(e) => setUser({...user, client_name: e.target.value})}/>
+                value={data.client_name}
+                onChange={(e) => setData({...data, client_name: e.target.value})}/>
                 <input className="modal-right-input" type="email" name="email" required placeholder="Email:"
-                onChange={(e) => setUser({...user, email: e.target.value})}/>
+                value={data.email}
+                onChange={(e) => setData({...data, email: e.target.value})}/>
                 <input className="modal-right-input" type="text" name="manager" placeholder="Manager:"
-                onChange={(e) => setUser({...user, manager: e.target.value})}/>
+                value={data.manager}
+                onChange={(e) => setData({...data, manager: e.target.value})}/>
                 <input className="modal-right-input" type="number" name="manager_factor"
-                onChange={(e) => setUser({...user, manager_factor: e.target.value})}/>
+                value={data.manager_factor}
+                onChange={(e) => setData({...data, manager_factor: e.target.value})}/>
                 <div className="modal-right-radio-input">
                     <p>Payment method:</p>
                     <div>
-                        <input type="radio" id="payment-paypal" name="paymentMethod" value="PayPal" checked={user.paymentMethod == "PayPal"}
-                        onChange={(e) => setUser({...user, paymentMethod: e.target.value})}/>
+                        <input type="radio" id="payment-paypal" name="paymentMethod" value="PayPal" checked={data.paymentMethod == "PayPal"}
+                        onChange={(e) => setData({...data, paymentMethod: e.target.value})}/>
                         <label htmlFor="payment-paypal">PayPal</label>
                     </div>
                     <div>
-                        <input type="radio" id="payment-wire" name="paymentMethod" value="wireTransfer" checked={user.paymentMethod == "wireTransfer"}
-                        onChange={(e) => setUser({...user, paymentMethod: e.target.value})}/>
+                        <input type="radio" id="payment-wire" name="paymentMethod" value="wireTransfer" checked={data.paymentMethod == "wireTransfer"}
+                        onChange={(e) => setData({...data, paymentMethod: e.target.value})}/>
                         <label htmlFor="payment-wire">Wire transfer</label>
                     </div>
                     <div>
-                        <input type="radio" id="payment-bitcoin" name="paymentMethod" value="bitcoin" checked={user.paymentMethod == "bitcoin"}
-                        onChange={(e) => setUser({...user, paymentMethod: e.target.value})}/>
+                        <input type="radio" id="payment-bitcoin" name="paymentMethod" value="bitcoin" checked={data.paymentMethod == "bitcoin"}
+                        onChange={(e) => setData({...data, paymentMethod: e.target.value})}/>
                         <label htmlFor="payment-bitcoin">Bitcoin</label>
                     </div>
                 </div>

@@ -7,13 +7,9 @@ function ProfilePage() {
 
   const { id } = useParams()
 
-  useEffect (() => {
-
-  }, [id])
-
   return (
     <div className="profile-hours-container grid-2-1">
-      <Profile />
+      <Profile id={id} />
       <Tasks />
     </div>
   )

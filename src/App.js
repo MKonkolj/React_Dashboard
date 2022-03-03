@@ -6,6 +6,7 @@ import MyProfile from "./Pages/MyProfile";
 import { createContext, useState } from "react"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ProfilePage from "./Pages/ProfilePage";
+import ClientPage from "./Pages/ClientPage"
 
 //Create context
 export const AppContext = createContext();
@@ -36,6 +37,7 @@ function App() {
             <Route path="/clients" element={<Clients />} />
             <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/user/:id" element={<ProfilePage />} />
+            <Route path="/clients/:id" element={<ClientPage />} />
           </Routes>
             </div>
           </div>
