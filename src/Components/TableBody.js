@@ -5,6 +5,7 @@ import EditModal from "./Modals/EditModal";
 import NoData from "./Loaders/NoData";
 import { AppContext } from "../App";
 import { Link } from "react-router-dom";
+import InsertTimeModal from "./Modals/InsertTimeModal";
 
 const TableBody = ({ data, columns, options, setData }) => {
 
@@ -12,12 +13,12 @@ const TableBody = ({ data, columns, options, setData }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State for deleteModal
+  const [insertTimeModalShow, setInsertTimeModalShow] = useState(false)
+  const [editModalShow, setEditModalShow] = useState(false);
   const [deleteModalShow, setDeleteModalShow] = useState(false);
   const [name, setName] = useState();
   const [id, setId] = useState(1);
-  //state for edit modal
-  const [editModalShow, setEditModalShow] = useState(false);
+
   
   const { url, reRender } = useContext(AppContext)
 
@@ -81,7 +82,20 @@ const TableBody = ({ data, columns, options, setData }) => {
                 {options && (
                   <td className="table-cell options-column">
                       <div className="options-container">
-                          {options.time && <span className="time-option options-icon"></span>}
+                          {options.time && <span className="time-option options-icon"
+                            onClick={() => {
+                              setInsertTimeModalShow(true)
+                              setName(() => {
+                                let name = "";
+                                if (data.first_name) {
+                                  return data.first_name + " " + data.last_name;
+                                } else {
+                                  return data.client_name;
+                                }
+                              });
+                              setId(data.id)
+                            }}
+                          ></span>}
                           {options.edit && <span className="edit-option options-icon"
                             onClick={() => {
                               setEditModalShow(true)
@@ -117,6 +131,7 @@ const TableBody = ({ data, columns, options, setData }) => {
         {deleteModalShow && <DeleteModal name={name} id={id} setDeleteModalShow={setDeleteModalShow}/>}
         {editModalShow && <div className="black-alpha fixed-center" onClick={() => setEditModalShow(false)}></div>}
         <EditModal editModalShow={editModalShow} setEditModalShow={setEditModalShow} id={id} />
+        {insertTimeModalShow && <InsertTimeModal name={name} id={id} setInsertTimeModalShow={setInsertTimeModalShow} />}
       </div>
   )
 }

@@ -81,7 +81,7 @@
       "city": "Farkaždin",
       "country": "Serbia",
       "password": "secret",
-      "role": "Human Resources Assistant II",
+      "role": "HR Assistant II",
       "status": "Active",
       "tekuci_racun": "5108751762224531"
     },
@@ -271,6 +271,57 @@
       "role": "Nurse Practicioner",
       "status": "Active",
       "tekuci_racun": "5108755927602291"
+    },
+    {
+      "avatar": {
+        "image_path": "./images/profile-images/ben-parker.jpg",
+        "image_alt": "Profile image of Lorem Ipsum"
+      },
+      "first_name": "Mladen",
+      "last_name": "Konkolj",
+      "email": "mladen.konkolj@gmail.com",
+      "street": "Gogoljeva",
+      "city": "Su",
+      "country": "su",
+      "password": "393939",
+      "role": "SU",
+      "status": "Active",
+      "tekuci_racun": "85848393398",
+      "id": 18
+    },
+    {
+      "avatar": {
+        "image_path": "./images/profile-images/ben-parker.jpg",
+        "image_alt": "Profile image of Lorem Ipsum"
+      },
+      "first_name": "Mladen",
+      "last_name": "Konkolj",
+      "email": "mladen.konkolj@gmail.com",
+      "street": "Gogoljeva",
+      "city": "Su",
+      "country": "su",
+      "password": "393939",
+      "role": "SU",
+      "status": "Active",
+      "tekuci_racun": "85848393398",
+      "id": 19
+    },
+    {
+      "avatar": {
+        "image_path": "./images/profile-images/ben-parker.jpg",
+        "image_alt": "Profile image of Lorem Ipsum"
+      },
+      "first_name": "Mladen",
+      "last_name": "Konkolj",
+      "email": "mladen.konkolj@gmail.com",
+      "street": "Gogoljeva",
+      "city": "Su",
+      "country": "su",
+      "password": "393939",
+      "role": "SU",
+      "status": "Active",
+      "tekuci_racun": "85848393398",
+      "id": 20
     }
   ],
   "clients": [

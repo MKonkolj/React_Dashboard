@@ -82,8 +82,8 @@
   font-size: var(--font-size-small);
 }
 
-:focus,
-:focus-visible {
+input:focus,
+input:focus-visible {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
@@ -110,11 +110,6 @@ li a,
 a {
   text-decoration: none;
   list-style: none;
-}
-
-ul li a:focus,
-ul li a:focus-visible {
-  box-shadow: none;
 }
 
 /*HELPER CLASSES  ****************************************/
@@ -535,17 +530,13 @@ th.table-cell {
 /* TIME MODAL */
 
 .time-modal {
-  display: none;
+  display: block;
   width: 800px;
   min-height: 400px;
   background: var(--white);
   border-radius: 20px;
   padding: 30px clamp(1.875rem, 0.7107843137254901rem + 4.901960784313726vw, 3.75rem);
   text-align: center;
-}
-
-.time-modal.show {
-  display: block;
 }
 
 .time-modal-container {
