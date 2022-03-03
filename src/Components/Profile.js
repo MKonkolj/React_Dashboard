@@ -2,14 +2,18 @@ import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../App"
 import Loading from "./Loaders/Loading";
 import EditModal from "./Modals/EditModal";
+import InsertTimeModal from "./Modals/InsertTimeModal";
 
 function Profile({ id }) {
+
   // Fetch data
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const [user, setUser] = useState("")
 
   const { reRender } = useContext(AppContext)
+  const [ insertTimeModalShow, setInsertTimeModalShow ] = useState(false)
+  const [ name, setName ] = useState()
   const [ editModalShow, setEditModalShow] = useState(false)
   const [ tasksTime, setTasksTime] = useState(0)
 
@@ -71,14 +75,18 @@ function Profile({ id }) {
           <li><strong>Status: </strong><span>{(user.status == "Active") ? "🟢 Active" : "🔴 Inactive"}</span></li>
         </ul>
         <div className="profile-buttons">
-          <a className="insert-hours-btn btn-primary">Insert hours</a>
+          <button className="insert-hours-btn btn-primary" onClick={() => {
+            setInsertTimeModalShow(true)
+            setName(() => user.first_name + " " + user.last_name);
+          }}>Insert hours</button>
           <p><strong>This month: {Math.floor(tasksTime/60) + "h "+ tasksTime % 60 + "min"}</strong></p>
-          <a className="log-out-btn btn-primary btn-white">Log out</a>
+          <button className="log-out-btn btn-primary btn-white">Log out</button>
         </div>
     </div>
     )}
     {editModalShow && <div className="black-alpha fixed-center" onClick={() => setEditModalShow(false)}></div>}
     <EditModal editModalShow={editModalShow} setEditModalShow={setEditModalShow} id={id} />
+    {insertTimeModalShow && <InsertTimeModal name={name} id={id} setInsertTimeModalShow={setInsertTimeModalShow} />}
     </>
   )
 }

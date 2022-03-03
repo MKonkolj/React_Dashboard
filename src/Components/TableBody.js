@@ -85,15 +85,7 @@ const TableBody = ({ data, columns, options, setData }) => {
                           {options.time && <span className="time-option options-icon"
                             onClick={() => {
                               setInsertTimeModalShow(true)
-                              setName(() => {
-                                let name = "";
-                                if (data.first_name) {
-                                  return data.first_name + " " + data.last_name;
-                                } else {
-                                  return data.client_name;
-                                }
-                              });
-                              setId(data.id)
+                              setName(() => data.client_name);
                             }}
                           ></span>}
                           {options.edit && <span className="edit-option options-icon"

@@ -530,7 +530,7 @@ th.table-cell {
 /* TIME MODAL */
 
 .time-modal {
-  display: block;
+  display: grid;
   width: 800px;
   min-height: 400px;
   background: var(--white);
@@ -541,42 +541,51 @@ th.table-cell {
 
 .time-modal-container {
   column-gap: 60px;
-  row-gap: 40px;
+  align-items: baseline;
 }
 
-.desc-time {
+.time-modal-date {
   justify-content: start;
 }
 
-.desc-time > *{
+.time-modal-date > *{
   display: block;
   text-align: left;
   margin-bottom: 10px;
   width: 100%;
 }
 
-.desc-time textarea {
+.time-modal-desc {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px 5px 5px;
+  font-size: var(--font-size-small);
+}
+
+.time-modal-desc textarea {
   resize: none;
-  margin-bottom: 20px;
+  margin-block: 10px 20px;
   border: 1px solid var(--light-grey);
   border-radius: 4px;
   padding: 5px 20px;
 }
 
-.date-picker {
-  text-align: left;
-  padding-left: 90px;
+.time-modal-date-picker {
+  display: block;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+  font-size: var(--font-size-small);
 }
 
-.date-picker img {
-  max-width: 150px;
-  display: block;
-  padding-top: 20px;
+.time-modal-desc {
+  text-align: left;
 }
 
 .time-modal-number {
   display: inline;
-  width: 60px;
+  margin-right: .5rem;
+  width: 4rem;
   border: 1px solid var(--light-grey);
   border-radius: 4px;
   padding: 5px 5px 5px 10px;
@@ -585,6 +594,7 @@ th.table-cell {
 
 .time-modal-btns {
   margin-top: 40px;
+  grid-column: span 2;
 }
 
 .time-modal-btns .btn-white {
@@ -857,7 +867,7 @@ th.table-cell {
   .time-modal-container {
       row-gap: 40px;
   }
-  .date-picker {
+  .time-modal-desc {
       padding-left: 0;
   }
   .no-data-container {
