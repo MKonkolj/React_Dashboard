@@ -30,8 +30,8 @@
       "city": "Banatski Dvor",
       "country": "Serbia",
       "password": "secret",
-      "role": "Research Assistant",
-      "status": "Inactive",
+      "role": "Research Nurse",
+      "status": "Active",
       "tekuci_racun": "5108756529025907"
     },
     {
@@ -271,64 +271,13 @@
       "role": "Nurse Practicioner",
       "status": "Active",
       "tekuci_racun": "5108755927602291"
-    },
-    {
-      "avatar": {
-        "image_path": "./images/profile-images/ben-parker.jpg",
-        "image_alt": "Profile image of Lorem Ipsum"
-      },
-      "first_name": "Mladen",
-      "last_name": "Konkolj",
-      "email": "mladen.konkolj@gmail.com",
-      "street": "Gogoljeva",
-      "city": "Su",
-      "country": "su",
-      "password": "393939",
-      "role": "SU",
-      "status": "Active",
-      "tekuci_racun": "85848393398",
-      "id": 18
-    },
-    {
-      "avatar": {
-        "image_path": "./images/profile-images/ben-parker.jpg",
-        "image_alt": "Profile image of Lorem Ipsum"
-      },
-      "first_name": "Mladen",
-      "last_name": "Konkolj",
-      "email": "mladen.konkolj@gmail.com",
-      "street": "Gogoljeva",
-      "city": "Su",
-      "country": "su",
-      "password": "393939",
-      "role": "SU",
-      "status": "Active",
-      "tekuci_racun": "85848393398",
-      "id": 19
-    },
-    {
-      "avatar": {
-        "image_path": "./images/profile-images/ben-parker.jpg",
-        "image_alt": "Profile image of Lorem Ipsum"
-      },
-      "first_name": "Mladen",
-      "last_name": "Konkolj",
-      "email": "mladen.konkolj@gmail.com",
-      "street": "Gogoljeva",
-      "city": "Su",
-      "country": "su",
-      "password": "393939",
-      "role": "SU",
-      "status": "Active",
-      "tekuci_racun": "85848393398",
-      "id": 20
     }
   ],
   "clients": [
     {
       "id": 1,
       "client_name": "Unify",
-      "avatar": "https://media.istockphoto.com/photos/smart-home-symbol-picture-id1314037715?k=20&m=1314037715&s=612x612&w=0&h=hDYBWJEgIP66xyqwKPw9UbHLg6g1WhcKENjLgRQbs1s=",
+      "avatar": "https://11daysofglobalunity.accites.com/wp-content/uploads/2015/08/UNIFY-Logo-Vector-200-w-white.png",
       "email": "unify@test.com",
       "manager": "Mirko Vrknic",
       "manager_factor": "1",
@@ -337,11 +286,20 @@
     {
       "id": 2,
       "client_name": "Like Media Inc",
-      "avatar": "https://media.istockphoto.com/photos/one-like-social-media-notification-with-thumb-up-icon-picture-id1200899039?k=20&m=1200899039&s=612x612&w=0&h=RScG0RGONTAuYLeoREVl9c6xtTsOlJAbcUjZ9y2Z244=",
+      "avatar": "https://static.vecteezy.com/system/resources/thumbnails/002/767/748/small/lm-logo-letter-initial-logo-designs-template-free-vector.jpg",
       "email": "likeManager@test.com",
       "manager": "Jelisaveta Milovic",
       "manager_factor": "0.75",
       "paymentMethod": "Stemi"
+    },
+    {
+      "id": 3,
+      "client_name": "Smile holding",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJWG5HUp6TKCEj4RDQ2q0PZ1vjp0YJ_LtXr1cXepxZmSeiB4qHHK0ofSaZj33H3WpKdgI&usqp=CAU",
+      "email": "unify@test.com",
+      "manager": "Mirko Vrknic",
+      "manager_factor": "1",
+      "paymentMethod": "PayPal"
     },
     {
       "id": 4,
@@ -351,6 +309,51 @@
       "manager": "Jelisaveta Milovic",
       "manager_factor": "1",
       "paymentMethod": "PayPal"
+    },
+    {
+      "id": 5,
+      "client_name": "C Dounts LTD",
+      "avatar": "https://images.unsplash.com/photo-1516876437184-593fda40c7ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
+      "email": "unify@test.com",
+      "manager": "Jelena Ivanovic",
+      "manager_factor": "0.5",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 6,
+      "client_name": "Beetle Juice LTD",
+      "avatar": "https://store-images.s-microsoft.com/image/apps.46899.14474299641789941.2b826c2b-6f48-41fa-aa11-5d2919ea820e.c9209f9a-53f6-46ef-a260-34567b96c638?mode=scale&q=90&h=200&w=200&background=%23464646",
+      "email": "likeManager@test.com",
+      "manager": "Jelisaveta Milovic",
+      "manager_factor": "0.75",
+      "paymentMethod": "Stemi"
+    },
+    {
+      "id": 7,
+      "client_name": "Xiaomi Mi",
+      "avatar": "https://logodownload.org/wp-content/uploads/2015/02/xiaomi-logo-7.png",
+      "email": "likeManager@test.com",
+      "manager": "Jelisaveta Milovic",
+      "manager_factor": "0.75",
+      "paymentMethod": "Stemi"
+    },
+    {
+      "id": 8,
+      "client_name": "Limited Spectre Inc",
+      "avatar": "https://jwt.io/img/icon.svg",
+      "email": "likeManager@test.com",
+      "manager": "Jelisaveta Milovic",
+      "manager_factor": "0.75",
+      "paymentMethod": "Stemi"
+    },
+    {
+      "id": 9,
+      "client_name": "Blockchain Supreme",
+      "avatar": "https://t4.ftcdn.net/jpg/03/03/43/51/360_F_303435130_zdXyoqatlaUbVRGsLFgq6zUfknzraMgP.jpg",
+      "email": "likeManager@test.com",
+      "manager": "Jelisaveta Milovic",
+      "manager_factor": "0.75",
+      "paymentMethod": "Stemi"
     }
   ]
 }

@@ -4,12 +4,11 @@ import { AppContext } from "../../App"
 
 function AddModal({ addModalShow, setAddModalShow }) {
     // in parent:
-    // {addModalShow && <div className="black-alpha fixed-center" onClick={() => setAddModalShow(false)}></div>}
     // <AddModal addModalShow={addModalShow} setAddModalShow={setAddModalShow} />
     // to callback:
     // onClick={() => setAddModalShow(true)}
 
-    const { url, reRender, setReRender } = useContext(AppContext);
+    const { url, setReRender } = useContext(AppContext);
 
     const avatar = {
         image_path: "./images/profile-images/ben-parker.jpg",
@@ -67,10 +66,13 @@ function AddModal({ addModalShow, setAddModalShow }) {
         }).then (() => {
             console.log("new client added");
             setAddModalShow(false);
+            setReRender(prevReRender => !prevReRender)
         })
     }
 
   return (
+    <>
+        {addModalShow && <div className="black-alpha fixed-center" onClick={() => setAddModalShow(false)}></div>}
         <div className={addModalShow ? "add-user-modal show" : "add-user-modal"}>
             {(url.slice(22) == "users") ? (
                 // USER FORM
@@ -132,13 +134,13 @@ function AddModal({ addModalShow, setAddModalShow }) {
                     <p className="modal-title">{(newClient.client_name !== "") ? newClient.client_name : "New Client"}</p>
                     <img className="add-user-image" src="" alt="Add image"/>
                     <input className="modal-right-input" type="text"
-                    onChange={(e) => setNewClient({...newClient, client_name: e.target.value})} name="name" required placeholder="Client name:"/>
+                    onChange={(e) => setNewClient({...newClient, client_name: e.target.value})} name="name" required placeholder="Client name"/>
                     <input className="modal-right-input" type="email" 
-                    onChange={(e) => setNewClient({...newClient, email: e.target.value})} name="email" required placeholder="Email:"/>
+                    onChange={(e) => setNewClient({...newClient, email: e.target.value})} name="email" required placeholder="Email"/>
                     <input className="modal-right-input" type="text" 
-                    onChange={(e) => setNewClient({...newClient, manager: e.target.value})} name="manager" placeholder="Manager:"/>
+                    onChange={(e) => setNewClient({...newClient, manager: e.target.value})} name="manager" placeholder="Manager"/>
                     <input className="modal-right-input" type="number" 
-                    onChange={(e) => setNewClient({...newClient, manager_factor: e.target.value})} name="manager_factor" />
+                    onChange={(e) => setNewClient({...newClient, manager_factor: e.target.value})} name="manager_factor" placeholder="Manager factor" />
                     <div className="modal-right-radio-input">
                         <p>Payment method:</p>
                         <div>
@@ -168,6 +170,7 @@ function AddModal({ addModalShow, setAddModalShow }) {
                 </form>
             )}
         </div>
+    </>
   )
 }
 

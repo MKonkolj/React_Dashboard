@@ -796,6 +796,9 @@ th.table-cell {
   .insert-hours-btn {
    margin-left: auto;
   }
+  .edit-profile {
+    margin-left: 1rem;
+  }
 }
 
 @media (max-width: 992px) {

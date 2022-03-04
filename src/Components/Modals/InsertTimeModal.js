@@ -20,7 +20,7 @@ function InsertTimeModal({ name, setInsertTimeModalShow }) {
     const [timeData, setTimeData] = useState({
         client_name: name,
         task: "",
-        date: today.toLocaleDateString('en-CA'),
+        date: today.toLocaleDateString('sr-Latn-CS'),
         time: 0
     })
 
@@ -39,7 +39,8 @@ function InsertTimeModal({ name, setInsertTimeModalShow }) {
     }
 
   return (
-    <div className="black-alpha fixed-center">
+      <>
+        <div className="black-alpha fixed-center" onClick={() => setInsertTimeModalShow(false)}></div>
         <div className="time-modal fixed-center show">
             <p className="modal-subtitle">Enter time used for: {name}</p>
             <form onSubmit={handleTimeSubmit} className="time-modal-container grid-2-1">
@@ -50,15 +51,14 @@ function InsertTimeModal({ name, setInsertTimeModalShow }) {
                     />
                     <label>Time spent:</label>
                     <div>
-                        <input className="time-modal-number" type="number" placeholder="00"/>
-                        <input className="time-modal-number" type="number" placeholder="00"
+                        <input className="time-modal-number" type="number" placeholder="00" required
                         onChange={(e) => setTimeData({...timeData, time: e.target.value})}
                         />
                     </div>
                 </div>
                 <div className="time-modal-desc">
                     <label>Description:</label>
-                    <textarea cols="30" rows="4" placeholder="Work description" 
+                    <textarea cols="30" rows="4" placeholder="Work description" required
                     onChange={(e) => setTimeData({...timeData, task: e.target.value})}
                     ></textarea>
                 </div>
@@ -68,7 +68,7 @@ function InsertTimeModal({ name, setInsertTimeModalShow }) {
                 </div>
             </form>
         </div>
-    </div>
+      </>
   )
 }
 

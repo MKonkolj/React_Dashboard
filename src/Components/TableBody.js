@@ -121,7 +121,6 @@ const TableBody = ({ data, columns, options, setData }) => {
         )}
         {/* MODALI */}
         {deleteModalShow && <DeleteModal name={name} id={id} setDeleteModalShow={setDeleteModalShow}/>}
-        {editModalShow && <div className="black-alpha fixed-center" onClick={() => setEditModalShow(false)}></div>}
         <EditModal editModalShow={editModalShow} setEditModalShow={setEditModalShow} id={id} />
         {insertTimeModalShow && <InsertTimeModal name={name} id={id} setInsertTimeModalShow={setInsertTimeModalShow} />}
       </div>

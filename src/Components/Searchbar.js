@@ -11,7 +11,6 @@ const Searchbar = ({ handleSearch }) => {
           <input onChange={handleSearch} className="searchbar" type="text" placeholder="Search" />
           <input className="add-user-btn btn-primary" type="submit" value="Add new" onClick={() => setAddModalShow(true)} />
       </div>
-      {addModalShow && <div className="black-alpha fixed-center" onClick={() => setAddModalShow(false)}></div>}
       <AddModal addModalShow={addModalShow} setAddModalShow={setAddModalShow} />
     </div>
   )
