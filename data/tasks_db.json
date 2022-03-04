@@ -4,12 +4,14 @@
       "id": 1,
       "client_name": "Unify",
       "task": "Work on lorem ipsuming the pdf on the html channel",
+      "developer": "Elisabet Halloway",
       "date": "03.03.2022.",
       "time": 45
     },
     {
       "id": 2,
       "client_name": "Like Media Inc",
+      "developer": "Hilde Phipson",
       "task": "Very very long lorem ipsum clients task in hand",
       "date": "01.03.2022.",
       "time": 41
@@ -17,6 +19,7 @@
     {
       "id": 3,
       "client_name": "Smile holding",
+      "developer": "Hilde Phipson",
       "task": "Creating responsive CSS",
       "date": "23.02.2022.",
       "time": 22
@@ -24,6 +27,7 @@
     {
       "id": 4,
       "client_name": "Bon Ton",
+      "developer": "Reyna Skottle",
       "task": "Converting app to React",
       "date": "17.02.2022.",
       "time": 134
@@ -31,6 +35,7 @@
     {
       "id": 5,
       "client_name": "C Dounts LTD",
+      "developer": "Elisabet Halloway",
       "task": "Updating wordpress",
       "date": "20.01.2022.",
       "time": 15
@@ -39,12 +44,14 @@
       "id": 6,
       "client_name": "Unify",
       "task": "Work on lorem ipsuming the pdf on the html channel",
+      "developer": "Reyna Skottle",
       "date": "17.01.2022.",
       "time": 45
     },
     {
       "id": 7,
       "client_name": "Like Media Inc",
+      "developer": "Reyna Skottle",
       "task": "Very very long lorem ipsum clients task in hand",
       "date": "06.01.2022.",
       "time": 41
@@ -52,6 +59,7 @@
     {
       "id": 8,
       "client_name": "Smile holding",
+      "developer": "Elisabet Halloway",
       "task": "Creating responsive CSS",
       "date": "05.01.2022.",
       "time": 22
@@ -59,6 +67,7 @@
     {
       "id": 9,
       "client_name": "Bon Ton",
+      "developer": "Hilde Phipson",
       "task": "Converting app to React",
       "date": "04.01.2022.",
       "time": 134
@@ -66,6 +75,7 @@
     {
       "id": 10,
       "client_name": "C Dounts LTD",
+      "developer": "Elisabet Halloway",
       "task": "Updating wordpress",
       "date": "03.01.2022.",
       "time": 15
@@ -74,12 +84,14 @@
       "id": 11,
       "client_name": "Unify",
       "task": "Work on lorem ipsuming the pdf on the html channel",
+      "developer": "Reyna Skottle",
       "date": "25.12.2021.",
       "time": 45
     },
     {
       "id": 12,
       "client_name": "Like Media Inc",
+      "developer": "Elisabet Halloway",
       "task": "Very very long lorem ipsum clients task in hand",
       "date": "24.12.2021.",
       "time": 41
@@ -87,6 +99,7 @@
     {
       "id": 13,
       "client_name": "Smile holding",
+      "developer": "Reyna Skottle",
       "task": "Creating responsive CSS",
       "date": "23.12.2021.",
       "time": 22
@@ -94,6 +107,7 @@
     {
       "id": 14,
       "client_name": "Bon Ton",
+      "developer": "Elisabet Halloway",
       "task": "Converting app to React",
       "date": "15.12.2021.",
       "time": 134
@@ -101,6 +115,7 @@
     {
       "id": 15,
       "client_name": "C Dounts LTD",
+      "developer": "Reyna Skottle",
       "task": "Updating wordpress",
       "date": "12.12.2021.",
       "time": 15
@@ -109,12 +124,14 @@
       "id": 16,
       "client_name": "Unify",
       "task": "Work on lorem ipsuming the pdf on the html channel",
+      "developer": "Elisabet Halloway",
       "date": "11.12.2021.",
       "time": 45
     },
     {
       "id": 17,
       "client_name": "Like Media Inc",
+      "developer": "Hilde Phipson",
       "task": "Very very long lorem ipsum clients task in hand",
       "date": "04.12.2021.",
       "time": 41
@@ -122,6 +139,7 @@
     {
       "id": 18,
       "client_name": "Smile holding",
+      "developer": "Reyna Skottle",
       "task": "Creating responsive CSS",
       "date": "02.12.2021.",
       "time": 22
@@ -129,6 +147,7 @@
     {
       "id": 19,
       "client_name": "Bon Ton",
+      "developer": "Hilde Phipson",
       "task": "Converting app to React",
       "date": "17.11.2021.",
       "time": 134
@@ -136,6 +155,7 @@
     {
       "id": 20,
       "client_name": "C Dounts LTD",
+      "developer": "Elisabet Halloway",
       "task": "Updating wordpress",
       "date": "05.11.2021.",
       "time": 25

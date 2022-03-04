@@ -94,7 +94,7 @@ const TableBody = ({ data, columns, options, setData }) => {
                               setId(data.id)
                             }}></span>}
                           {options.view && <Link to={
-                            (url.includes("users") ?  `/user/${data.id}` :  `/clients/${data.id}`)
+                            (url.includes("users") ?  `/user/${data.id}` :  `/client/${data.id}`)
                             }><span className="view-option options-icon"></span></Link>}
                           {options.invoice && <span className="invoice-option options-icon"></span>}
                           {options.delete && <span className="delete-option options-icon"

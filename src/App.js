@@ -43,7 +43,7 @@ function App() {
             <Route path="/clients" element={<Clients />} />
             <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/user/:id" element={<ProfilePage />} />
-            <Route path="/clients/:id" element={<ClientPage />} />
+            <Route path="/client/:id" element={<ClientPage />} />
           </Routes>
             </div>
           </div>

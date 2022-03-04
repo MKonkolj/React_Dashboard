@@ -290,7 +290,7 @@
       "email": "likeManager@test.com",
       "manager": "Jelisaveta Milovic",
       "manager_factor": "0.75",
-      "paymentMethod": "Stemi"
+      "paymentMethod": "Bitcoin"
     },
     {
       "id": 3,
@@ -317,7 +317,7 @@
       "email": "unify@test.com",
       "manager": "Jelena Ivanovic",
       "manager_factor": "0.5",
-      "paymentMethod": "Cash"
+      "paymentMethod": "wireTransfer"
     },
     {
       "id": 6,
@@ -326,7 +326,7 @@
       "email": "likeManager@test.com",
       "manager": "Jelisaveta Milovic",
       "manager_factor": "0.75",
-      "paymentMethod": "Stemi"
+      "paymentMethod": "Bitcoin"
     },
     {
       "id": 7,
@@ -335,7 +335,7 @@
       "email": "likeManager@test.com",
       "manager": "Jelisaveta Milovic",
       "manager_factor": "0.75",
-      "paymentMethod": "Stemi"
+      "paymentMethod": "Bitcoin"
     },
     {
       "id": 8,
@@ -344,7 +344,7 @@
       "email": "likeManager@test.com",
       "manager": "Jelisaveta Milovic",
       "manager_factor": "0.75",
-      "paymentMethod": "Stemi"
+      "paymentMethod": "Bitcoin"
     },
     {
       "id": 9,
@@ -353,7 +353,7 @@
       "email": "likeManager@test.com",
       "manager": "Jelisaveta Milovic",
       "manager_factor": "0.75",
-      "paymentMethod": "Stemi"
+      "paymentMethod": "Bitcoin"
     }
   ]
 }

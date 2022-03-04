@@ -107,7 +107,7 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
                 // CLIENT FORM
                 <form onSubmit={handleUpdateUser}>
                     <p className="modal-title">{data.client_name}</p>
-                    <img className="add-user-image" src="" alt="Add image"/>
+                    <img className="add-user-image" src={data.avatar} alt="Add image"/>
                     <input className="modal-right-input" type="text" name="client_name" required placeholder="Client name:"
                     value={data.client_name}
                     onChange={(e) => setData({...data, client_name: e.target.value})}/>
@@ -136,7 +136,7 @@ function EditModal({ editModalShow, setEditModalShow, id }) {
                         </div>
                         <div>
                             <label htmlFor="payment-bitcoin">
-                            <input type="radio" id="payment-bitcoin" name="paymentMethod" value="bitcoin" checked={data.paymentMethod == "bitcoin"}
+                            <input type="radio" id="payment-bitcoin" name="paymentMethod" value="bitcoin" checked={data.paymentMethod == "Bitcoin"}
                             onChange={(e) => setData({...data, paymentMethod: e.target.value})}/>
                             Bitcoin</label>
                         </div>

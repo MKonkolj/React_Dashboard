@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../App"
 import Loading from "./Loaders/Loading"
+import NoData from "./Loaders/NoData"
 
 const Tasks = () => {
 
@@ -8,7 +9,7 @@ const Tasks = () => {
     const [error, setError] = useState(null)
     const [tasks, setTasks] = useState()
 
-    const { reRender } = useContext(AppContext)
+    const { url, reRender } = useContext(AppContext)
 
     // fetch user data
     useEffect (() => {
@@ -30,12 +31,15 @@ const Tasks = () => {
 
   return (
     <>
+    {error && <NoData />}
     {isLoading ? <Loading /> : (
     <div className="profile-table-container">
         <table className="table profile-table">
             <thead>
             <tr>
-                <th>Client</th>
+                {console.log(url)}
+                {url.includes("users") && <th>Client</th>}
+                {url.includes("clients") && <th>Developer</th>}
                 <th>Task</th>
                 <th>Date</th>
                 <th>Time</th>
@@ -46,7 +50,8 @@ const Tasks = () => {
             {tasks && tasks.map(task => {
                 return (
                     <tr key={task.id}>
-                        <td className="profile-table-cell">{task.client_name}</td>
+                        {url.includes("users") && <td className="profile-table-cell">{task.client_name}</td>}
+                        {url.includes("clients") && <td className="profile-table-cell">{task.developer}</td>}
                         <td className="profile-table-cell">{task.task}</td>
                         <td className="profile-table-cell">{task.date}</td>
                         <td className="profile-table-cell">{Math.floor(task.time/60) + ":"+ task.time % 60}</td>
