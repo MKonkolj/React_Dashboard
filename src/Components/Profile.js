@@ -17,12 +17,10 @@ function Profile() {
   const { url, reRender } = useContext(AppContext)
   const [ insertTimeModalShow, setInsertTimeModalShow ] = useState(false)
   const [ name, setName ] = useState()
-  const [ editModalShow, setEditModalShow] = useState(false)
+  const [ editModalShow, setEditModalShow ] = useState(false)
   const [ tasksTime, setTasksTime] = useState(0)
 
   const date = new Date
-
-  console.log(url + "/" + id)
 
   // fetch user data
   useEffect (() => {
@@ -58,13 +56,13 @@ function Profile() {
       console.log("errorčina na GET!\n" + error)
       setError(error)
       })
-  }, [data])
+  }, [])
 
   return (
     <>
     {isLoading && <Loading />}
     {error && <NoData />}
-    {data && url.includes("users") && (<div className="profile-container">
+    {!isLoading && data && url.includes("users") && (<div className="profile-container">
         <div className="profile-header">
           <span className="edit-profile edit-option options-icon" onClick={() => {
                   setEditModalShow(true)
@@ -107,7 +105,7 @@ function Profile() {
         <div className="profile-buttons">
           <button className="insert-hours-btn btn-primary" onClick={() => {
             setInsertTimeModalShow(true)
-            setName(() => data.first_name + " " + data.last_name);
+            setName(() => data.client_name);
           }}>Insert hours</button>
           <p><strong>This month: {Math.floor(tasksTime/60) + "h "+ tasksTime % 60 + "min"}</strong></p>
           <button className="log-out-btn btn-primary btn-white">Log out</button>

@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import { useContext } from 'react'
+import { useState, useContext } from 'react'
 import { AppContext } from '../../App'
 
 function InsertTimeModal({ name, setInsertTimeModalShow }) {
     // in parent:
     // const [insertTimeModalShow, setInsertTimeModalShow] = useState(false)
     // const [name, setName] = useState();
-    // {insertTimeModalShow && <InsertTimeModal name={name} id={id} setInsertTimeModalShow={setInsertTimeModalShow} />}
+    // {insertTimeModalShow && <InsertTimeModal name={name} setInsertTimeModalShow={setInsertTimeModalShow} />}
 
     // to callback:
     // onClick={() => {
@@ -20,7 +19,7 @@ function InsertTimeModal({ name, setInsertTimeModalShow }) {
     const [timeData, setTimeData] = useState({
         client_name: name,
         task: "",
-        date: today.toLocaleDateString('sr-Latn-CS'),
+        date: today,
         time: 0
     })
 
@@ -46,7 +45,7 @@ function InsertTimeModal({ name, setInsertTimeModalShow }) {
             <form onSubmit={handleTimeSubmit} className="time-modal-container grid-2-1">
                 <div className="time-modal-date">
                     <label>Date:</label>
-                    <input className="time-modal-date-picker" type="date" defaultValue={today.toLocaleDateString('en-CA')} lang="sr-Latn-CS"
+                    <input className="time-modal-date-picker" type="date" defaultValue={today} lang="sr-Latn-CS"
                     onChange={(e) => setTimeData({...timeData, date: e.target.value})}
                     />
                     <label>Time spent:</label>

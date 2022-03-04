@@ -2,12 +2,18 @@ import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../App"
 import Loading from "./Loaders/Loading"
 import NoData from "./Loaders/NoData"
+import EditTimeModal from "./Modals/EditTimeModal"
+import DeleteTimeModal from "./Modals/DeleteTimeModal"
 
 const Tasks = () => {
 
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
     const [tasks, setTasks] = useState()
+    const [editTimeModalShow, setEditTimeModalShow] = useState(false)
+    const [deleteTimeModalShow, setDeleteTimeModalShow] = useState(false);
+    const [name, setName] = useState();
+    const [id, setId] = useState(1);
 
     const { url, reRender } = useContext(AppContext)
 
@@ -37,7 +43,6 @@ const Tasks = () => {
         <table className="table profile-table">
             <thead>
             <tr>
-                {console.log(url)}
                 {url.includes("users") && <th>Client</th>}
                 {url.includes("clients") && <th>Developer</th>}
                 <th>Task</th>
@@ -56,10 +61,18 @@ const Tasks = () => {
                         <td className="profile-table-cell">{task.date}</td>
                         <td className="profile-table-cell">{Math.floor(task.time/60) + ":"+ task.time % 60}</td>
                         <td className="profile-table-cell profile-hours-option">
-                        <div className="hours-option">
-                            <span className="dot dot1"></span>
-                            <span className="dot dot2"></span>
-                            <span className="dot dot3"></span>
+                        <div className="tasks-options">
+                            <div className="hours-option edit-option" onClick={() => {
+                                setEditTimeModalShow(true)
+                                setId(() => task.id);
+                            }}></div>
+                            <div className="delete-option options-icon"
+                                onClick={() => {
+                                    setDeleteTimeModalShow(true);
+                                    setName(task.client_name + " (" + task.time + " minutes)")
+                                    setId(task.id)
+                                }}
+                            ></div>
                         </div>
                         </td>
                     </tr>
@@ -69,6 +82,8 @@ const Tasks = () => {
         </table>
     </div>
     )}
+    {editTimeModalShow && <EditTimeModal id={id} setEditTimeModalShow={setEditTimeModalShow} />}
+    {deleteTimeModalShow && <DeleteTimeModal name={name} id={id} setDeleteTimeModalShow={setDeleteTimeModalShow}/>}
     </>
   )
 }
