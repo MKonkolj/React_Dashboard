@@ -6,4 +6,5 @@ Pored osnovnog dodate su funkcionalnosti dodavanja i editovanja user i klijenata
 // App je trenutno podešena da kupi podatke sa lokalnog json servera koji servira db.json na portu 8000 i user-reviews.json na portu 8080:
 
 npx json-server --watch ./data/db.json --port 8000
+
 npx json-server --watch .\data\user-reviews.json --port 8080
