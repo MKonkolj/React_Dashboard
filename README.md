@@ -7,4 +7,4 @@ Pored osnovnog dodate su funkcionalnosti dodavanja i editovanja user i klijenata
 
 npx json-server --watch ./data/db.json --port 8000
 
-npx json-server --watch .\data\user-reviews.json --port 8080
+npx json-server --watch ./data/tasks_db --port 8080
